@@ -2,33 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PostManager : MonoBehaviour
+
+public class PostSelector : MonoBehaviour
 {
-    [System.Serializable]
-    public class Post
-    {
-        public int Id;
-        public string Title;
-        public string HeadLine;
-        public List<string> Categories;
-        public Stats Stats;
-    }
-
-    [System.Serializable]
-    public class Stats
-    {
-        public int BanChances;
-        public int Money;
-        public int Views;
-        public int Members;
-    }
-
-    [System.Serializable]
-    public class PostsContainer
-    {
-        public List<Post> Posts;
-    }
-
     public List<Post> posts = new List<Post>();
     public List<int> healthPostIndex = new List<int>();
     public List<int> celebrityPostIndex = new List<int>();
@@ -74,5 +50,30 @@ public class PostManager : MonoBehaviour
             Debug.Log("Post ID: " + post.Id + ", Title: " + post.Title + "Headline:"+ post.HeadLine + ", Categories: " + string.Join(", ", post.Categories));
         }
     }
+}
 
+
+[System.Serializable]
+public struct Post
+{
+    public int Id;
+    public string Title;
+    public string HeadLine;
+    public List<string> Categories;
+    public Stats Stats;
+}
+
+[System.Serializable]
+public struct Stats
+{
+    public int BanChances;
+    public int Money;
+    public int Views;
+    public int Members;
+}
+
+[System.Serializable]
+public struct PostsContainer
+{
+    public List<Post> Posts;
 }
