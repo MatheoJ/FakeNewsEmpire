@@ -13,7 +13,7 @@ public class PostSelector : MonoBehaviour
     private string postsJsonLocation = "/Data/posttemplate.json"; // Adjust the path as needed
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         // Read the JSON data from the file
         string json = System.IO.File.ReadAllText(Application.dataPath + postsJsonLocation);
@@ -49,6 +49,14 @@ public class PostSelector : MonoBehaviour
         {
             Debug.Log("Post ID: " + post.Id + ", Title: " + post.Title + "Headline:"+ post.HeadLine + ", Categories: " + string.Join(", ", post.Categories)+ ", Stats: Tier: " + post.Stats.Tier + ", Ban Chances: " + post.Stats.BanChances + ", Money: " + post.Stats.Money + ", Views: " + post.Stats.Views + ", Members: " + post.Stats.Members);
         }
+    }
+
+    public void getLists(List<Post> posts, List<int> healthPosts, List<int> environmentPosts, List<int> celebrityPosts)
+    {
+        posts = this.posts;
+        healthPosts = healthPostIndex;
+        environmentPosts = environmentPostIndex;
+        celebrityPosts= celebrityPostIndex;
     }
 }
 
