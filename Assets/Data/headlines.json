@@ -1,0 +1,52 @@
+{"HealthHeadlines":[
+    {
+        "Id":"1",
+        "HeadLine":"Ramdon HeadLine 1",
+        "BanChanceThreshold": 50
+    },
+    {
+        "Id":"2",
+        "HeadLine":"Ramdon HeadLine 2",
+        "BanChanceThreshold": 100
+    },
+    {
+        "Id":"3",
+        "HeadLine":"Ramdon HeadLine 3",
+        "BanChanceThreshold": 200
+    }
+],
+"CelebrityHeadlines":[
+    {
+        "Id":"1",
+        "HeadLine":"Ramdon HeadLine 1",
+        "BanChanceThreshold": 50
+    },
+    {
+        "Id":"2",
+        "HeadLine":"Ramdon HeadLine 2",
+        "BanChanceThreshold": 100
+    },
+    {
+        "Id":"3",
+        "HeadLine":"Ramdon HeadLine 3",
+        "BanChanceThreshold": 200
+    }
+],
+"EnvironmentHeadlines":[
+    {
+        "Id":"1",
+        "HeadLine":"Ramdon HeadLine 1",
+        "BanChanceThreshold": 50
+    },
+    {
+        "Id":"2",
+        "HeadLine":"Ramdon HeadLine 2",
+        "BanChanceThreshold": 100
+    },
+    {
+        "Id":"3",
+        "HeadLine":"Ramdon HeadLine 3",
+        "BanChanceThreshold": 200
+    }
+]
+}

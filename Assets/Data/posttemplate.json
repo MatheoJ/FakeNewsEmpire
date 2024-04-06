@@ -1,0 +1,53 @@
+{
+    "Posts": [
+      {
+        "Id": 1,
+        "Title": "Ramdon health Title 1",
+        "HeadLine": "This is a health post. It is about health and how to stay healthy",
+        "Categories": ["Health", "Celebrity"],
+        "Stats": {
+          "BanChances": 78,
+          "Money": 23,
+          "Views": 98,
+          "Members": 0
+        }
+      },
+      {
+        "Id": 2,
+        "Title": "Ramdon health Title 2",
+        "HeadLine": "This is a health post. It is about health and how to stay healthy",
+        "Categories": ["Health"],
+        "Stats": {
+          "BanChances": 10,
+          "Money": 0,
+          "Views": 0,
+          "Members": 0
+        }
+      },
+      {
+        "Id": 3,
+        "Title": "Ramdon Title 1",
+        "Categories": ["Celebrity", "Environment"],
+        "HeadLine": "",
+        "Stats": {
+          "BanChances": 10,
+          "Money": 0,
+          "Views": 0,
+          "Members": 0
+        }
+      },
+      {
+        "Id": 4,
+        "Title": "Ramdon Title 2",
+        "HeadLine": "",
+        "Categories": ["Environment"],
+        "Stats": {
+          "BanChances": 10,
+          "Money": 0,
+          "Views": 0,
+          "Members": 0
+        }
+      }
+    ]
+}
+  
