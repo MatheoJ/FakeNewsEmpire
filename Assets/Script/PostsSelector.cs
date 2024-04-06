@@ -47,7 +47,7 @@ public class PostSelector : MonoBehaviour
         // Example usage
         foreach (Post post in posts)
         {
-            Debug.Log("Post ID: " + post.Id + ", Title: " + post.Title + "Headline:"+ post.HeadLine + ", Categories: " + string.Join(", ", post.Categories));
+            Debug.Log("Post ID: " + post.Id + ", Title: " + post.Title + "Headline:"+ post.HeadLine + ", Categories: " + string.Join(", ", post.Categories)+ ", Stats: Tier: " + post.Stats.Tier + ", Ban Chances: " + post.Stats.BanChances + ", Money: " + post.Stats.Money + ", Views: " + post.Stats.Views + ", Members: " + post.Stats.Members);
         }
     }
 }
@@ -66,6 +66,7 @@ public struct Post
 [System.Serializable]
 public struct Stats
 {
+    public int Tier;
     public int BanChances;
     public int Money;
     public int Views;
