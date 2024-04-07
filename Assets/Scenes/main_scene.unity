@@ -1887,11 +1887,13 @@ MonoBehaviour:
   postManager: {fileID: 1612636066}
   bossLinesSelector: {fileID: 1612636068}
   banChance: 0
+  money: 0
   views: 0
+  members: 0
   moneyCoef: 3.134
   viewsCoef: 36.0123
   membersCoef: 1.9876
-  banCoef: 0.02
+  banCoef: 0.04
   direction: {x: 0, y: 0, z: 0}
   healthIndexes: 
   celebrityIndexes: 

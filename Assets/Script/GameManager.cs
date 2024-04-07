@@ -14,9 +14,9 @@ public class GameManager : MonoBehaviour
     public BossLinesSelector bossLinesSelector;
 
     public float banChance=0;
-    public int money=0;
-    public int views=0;
-    public int members=0;
+    public static int money=0;
+    public static int views =0;
+    public static int members=0;
     int tier=0;
     int turn = 0;
     string headline;
@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
 
         UIM.WriteDays(30);
         UIM.WriteClippy("I'm not paying you to tell the truth. But. To. Spread. These. News");
+        money = 0;views = 0;members = 0;
 
     }
 
