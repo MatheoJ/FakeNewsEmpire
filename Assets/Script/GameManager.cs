@@ -13,10 +13,10 @@ public class GameManager : MonoBehaviour
     public PostSelector postManager;
     public BossLinesSelector bossLinesSelector;
 
-    float banChance=0;
-    int money=0;
+    public float banChance=0;
+    public int money=0;
     public int views=0;
-    int members=0;
+    public int members=0;
     int tier=0;
     int turn = 0;
     string headline;
@@ -65,11 +65,13 @@ public class GameManager : MonoBehaviour
         returnPosts.Add(DrawGivenCrazy(2, 0));
         returnPosts.Add(DrawGivenCrazy(3, 0));
         List<string> texts = new List<string>();
+        List<int> categories = new List<int>();
         for (int i = 0; i < returnPosts.Count; i++)
         {
             texts.Add(returnPosts[i].Title);
+            categories.Add(i);
         }
-        UIM.WritePosts(texts);
+        UIM.WritePosts(texts, categories);
 
         UIM.WriteValues(new Stats() { Money = 0, Views = 0, BanChances = 0, Members = 0 });
 
@@ -172,8 +174,9 @@ public class GameManager : MonoBehaviour
             banChance = 0;
             return false;
         }
-        if(Random.Range(0, 100) < banChance) { Debug.Log("banned!"); }
-        return false;//Random.Range(0, 100)<banChance;
+        /*if(Random.Range(0, 100) < banChance) { Debug.Log("banned!"); }
+        return false;*/
+        return Random.Range(0, 100)<banChance;
     }
 
     void UpdateHeadline()
@@ -196,40 +199,35 @@ public class GameManager : MonoBehaviour
 
         //if(money)
         //bossLines;
-        bool v = true;
         foreach(BossLine line in bossLines) 
         {
-            if (v)
+
+            if (line.Category == "Money" && line.LineOrderInCategory * 200 < money)
             {
-                if (line.Category == "Money" && line.LineOrderInCategory * 200 < money)
-                {
-                    UIM.WriteClippy(line.Line);
-                    v = false;
-                    bossLines.Remove(line);
-                    return;
-                }
-                else if (line.Category == "Views" && line.LineOrderInCategory * 200 < views)
-                {
-                    UIM.WriteClippy(line.Line);
-                    v = false;
-                    bossLines.Remove(line);
-                    return;
-                }
-                else if (line.Category == "Fans" && line.LineOrderInCategory * 200 < members)
-                {
-                    UIM.WriteClippy(line.Line);
-                    v = false;
-                    bossLines.Remove(line);
-                    return;
-                }
-                else if (line.Category == "Bans" && line.LineOrderInCategory * 10 < banChance)
-                {
-                    UIM.WriteClippy(line.Line);
-                    v = false;
-                    bossLines.Remove(line);
-                    return;
-                }
+                UIM.WriteClippy(line.Line);
+
+                bossLines.Remove(line);
+                return;
             }
+            else if (line.Category == "Views" && line.LineOrderInCategory * 200 < views)
+            {
+                UIM.WriteClippy(line.Line);
+                bossLines.Remove(line);
+                return;
+            }
+            else if (line.Category == "Fans" && line.LineOrderInCategory * 200 < members)
+            {
+                UIM.WriteClippy(line.Line);
+                bossLines.Remove(line);
+                return;
+            }
+            else if (line.Category == "Bans" && line.LineOrderInCategory * 10 < banChance)
+            {
+                UIM.WriteClippy(line.Line);
+                bossLines.Remove(line);
+                return;
+            }
+          
         }
 
 
@@ -272,11 +270,15 @@ public class GameManager : MonoBehaviour
 
         //draw associated icons depending on direction
         List<string> titles = new List<string>();
+        List<int> categories = new List<int>();
         for (int i = 0; i < returnPosts.Count; i++)
         {
             titles.Add(returnPosts[i].Title);
+            if (returnPosts[i].Categories[0] == "Health") { categories.Add(0); }
+            else if (returnPosts[i].Categories[0] == "Celebrity") { categories.Add(1); }
+            else if (returnPosts[i].Categories[0] == "Environment") { categories.Add(2); }
         }
-        UIM.WritePosts(titles);
+        UIM.WritePosts(titles,categories);
 
 
     }

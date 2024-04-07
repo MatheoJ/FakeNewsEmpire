@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using static System.Net.Mime.MediaTypeNames;
+using System.ComponentModel;
+using Image = UnityEngine.UI.Image;
 
 public class UIManager : MonoBehaviour
 {
@@ -23,6 +25,13 @@ public class UIManager : MonoBehaviour
 
     string memberName = StartManager.playerName;
 
+    public Sprite healthIcon;
+    public Sprite celebrityIcon;
+    public Sprite environmentIcon;
+
+    List<Sprite> sprites = new List<Sprite>();
+
+
     //public int money = 0;
 
     // Start is called before the first frame update
@@ -32,7 +41,10 @@ public class UIManager : MonoBehaviour
         option1.onClick.AddListener(delegate {Button1Pressed(); });
         option2.onClick.AddListener(delegate {Button2Pressed(); });
         option3.onClick.AddListener(delegate {Button3Pressed(); });
-        
+
+        sprites.Add(healthIcon);
+        sprites.Add(celebrityIcon);
+        sprites.Add(environmentIcon);
     }
 
     // Update is called once per frame
@@ -66,13 +78,17 @@ public class UIManager : MonoBehaviour
 
     public void WriteClippy(string text)
     {
-        assistant.GetComponentInChildren<TMP_Text>().text = text;
+        //assistant.GetComponentInChildren<TMP_Text>().text = text;
+        assistant.GetComponent<TMP_Text>().text = text; 
     }
 
-    public void WritePosts(List<string> postText)
+    public void WritePosts(List<string> postText, List<int> categories)
     {
         if (postText.Count == 3)
         {
+            option1.GetComponent<Image>().sprite = sprites[categories[0]];
+            option2.GetComponent<Image>().sprite = sprites[categories[1]];
+            option3.GetComponent<Image>().sprite = sprites[categories[2]];
             option1.GetComponentInChildren<TMP_Text>().text = postText[0];
             option2.GetComponentInChildren<TMP_Text>().text = postText[1];
             option3.GetComponentInChildren<TMP_Text>().text = postText[2];
