@@ -33,8 +33,8 @@ public class PauseManager : MonoBehaviour
             else
             {
                 pauseMenu.SetActive(true);
-                int views = 0;
-                views = GameManager.views;
+                float views = 0;
+                views = GameManager.views * GameManager.viewsCoef;
                 
                 viewCounter.text = ""+views;
             }
