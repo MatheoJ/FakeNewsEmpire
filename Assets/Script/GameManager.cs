@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     public int membersCoef = 1;
     public float banCoef = 1;
 
-    string memberName;
+
 
     public Vector3 direction=Vector3.zero; //Health,Celebrity,Environment
 

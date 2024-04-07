@@ -1519,6 +1519,7 @@ MonoBehaviour:
   moneyCoef: 1
   viewsCoef: 1
   membersCoef: 1
+  banCoef: 0.1
   direction: {x: 0, y: 0, z: 0}
   healthIndexes: 
   celebrityIndexes: 

@@ -14,7 +14,7 @@ public class StartManager : MonoBehaviour
     //Name input field
     public TMP_InputField nameInput;
 
-    public static string playerName;
+    public static string playerName = "Fans";
 
     // Start is called before the first frame update
     void Start()

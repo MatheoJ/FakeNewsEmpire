@@ -21,6 +21,8 @@ public class UIManager : MonoBehaviour
     public Button option2;
     public Button option3;
 
+    string memberName = StartManager.playerName;
+
     //public int money = 0;
 
     // Start is called before the first frame update
@@ -57,7 +59,7 @@ public class UIManager : MonoBehaviour
     {
         money_stat.GetComponentInChildren<TMP_Text>().text = "Money: " + stat.Money.ToString();
         viewer_stat.GetComponentInChildren<TMP_Text>().text = "Viewers : " + stat.Views.ToString();
-        member_stat.GetComponentInChildren<TMP_Text>().text = "Members : " + stat.Members.ToString();
+        member_stat.GetComponentInChildren<TMP_Text>().text = memberName+"ies : " + stat.Members.ToString();
         ban.GetComponentInChildren<TMP_Text>().text = stat.BanChances.ToString()+"%";
 
     }
@@ -98,4 +100,7 @@ public class UIManager : MonoBehaviour
     {
         news_headline.GetComponentInChildren<TMP_Text>().text = "BREAKING NEWS: "+text;
     }
+
+
+
 }
