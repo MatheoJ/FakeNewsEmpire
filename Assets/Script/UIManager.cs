@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     public GameObject member_stat;
     public GameObject assistant;
     public GameObject deadline;
+    public GameObject ban;
 
     public Button option1;
     public Button option2;
