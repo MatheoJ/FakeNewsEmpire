@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     public GameObject viewer_stat;
     public GameObject member_stat;
     public GameObject assistant;
+    public GameObject assistant_img;
     public GameObject deadline;
     public GameObject ban;
 
@@ -23,15 +24,24 @@ public class UIManager : MonoBehaviour
     public Button option2;
     public Button option3;
 
+    public AudioSource sfxSource_slam;
+    public AudioClip sfxClip_slam;
+    public AudioSource sfxSource_send;
+    public AudioClip sfxClip_send;
+    public AudioSource sfxSource_bgm;
+    public AudioClip sfxClip_bgm;
+
     public float elapsed = 0.0f;
     private float shakeRange = 5.0f;
     private float shakeTime = 0.5f;
-    private float scrollTime = 10.5f;
+    private float scrollTime = 5.5f;
     private float scrollRate = 0.5f;
-    private float shrinkTime = 0.5f;
+    private float shrinkTime = 1.5f;
     private float shrinkRate = 0.05f;
 
     private float canvasWidth = 800;
+
+    private string assistant_text;
 
     
     string memberName = StartManager.playerName;
@@ -48,6 +58,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        assistant_text = assistant.GetComponentInChildren<TMP_Text>().text;
         //Register Button Events
         option1.onClick.AddListener(delegate {Button1Pressed(); });
         option2.onClick.AddListener(delegate {Button2Pressed(); });
@@ -66,22 +77,55 @@ public class UIManager : MonoBehaviour
 
     public void Button1Pressed()
     {
+        playClip(sfxSource_send, sfxClip_send);
         StartCoroutine(ShakeEffect(assistant));
+        StartCoroutine(ShakeEffect(assistant_img));
         StartCoroutine(ScrollEffect(news_headline.GetComponentInChildren<TMP_Text>()));
+        StartCoroutine(ShrinkEffect(option1.gameObject));
         gameManager.SelectedPost(1);
+
+        if (assistant_text != assistant.GetComponentInChildren<TMP_Text>().text)
+        {
+            StartCoroutine(ShakeEffect(assistant));
+            StartCoroutine(ShakeEffect(assistant_img));
+            playClip(sfxSource_slam, sfxClip_slam);
+            assistant_text = assistant.GetComponentInChildren<TMP_Text>().text;
+        }
     }
     public void Button2Pressed()
     {
+        playClip(sfxSource_send, sfxClip_send);
         StartCoroutine(ShakeEffect(assistant));
+        StartCoroutine(ShakeEffect(assistant_img));
         StartCoroutine(ScrollEffect(news_headline.GetComponentInChildren<TMP_Text>()));
+        StartCoroutine(ShrinkEffect(option2.gameObject));
         gameManager.SelectedPost(2);
+
+        if (assistant_text != assistant.GetComponentInChildren<TMP_Text>().text)
+        {
+            StartCoroutine(ShakeEffect(assistant));
+            StartCoroutine(ShakeEffect(assistant_img));
+            playClip(sfxSource_slam, sfxClip_slam);
+            assistant_text = assistant.GetComponentInChildren<TMP_Text>().text;
+        }
     }
     public void Button3Pressed()
     {
-        StartCoroutine(ShakeEffect(assistant));
+        playClip(sfxSource_send, sfxClip_send);
         StartCoroutine(ScrollEffect(news_headline.GetComponentInChildren<TMP_Text>()));
         StartCoroutine(ShrinkEffect(option3.gameObject));
         gameManager.SelectedPost(3);
+        Debug.Log("prev: "+assistant_text);
+        Debug.Log("now: "+assistant_text);
+
+        if (assistant_text != assistant.GetComponentInChildren<TMP_Text>().text)
+        {
+            StartCoroutine(ShakeEffect(assistant));
+            StartCoroutine(ShakeEffect(assistant_img));
+            playClip(sfxSource_slam, sfxClip_slam);
+            assistant_text = assistant.GetComponentInChildren<TMP_Text>().text;
+        }
+
     }
 
 
@@ -156,7 +200,7 @@ public class UIManager : MonoBehaviour
         while (elapsed < scrollTime){
             float x_pos = item.transform.position.x;
             if (x_pos < -400){
-                x_pos += canvasWidth; 
+                x_pos += canvasWidth+400; 
             }
             item.transform.position = new Vector3(x_pos - scrollRate, item.transform.position.y, 
             item.transform.position.z); 
@@ -170,7 +214,6 @@ public class UIManager : MonoBehaviour
         elapsed = 0.0f;
         Vector3 originalScale = item.transform.localScale;
 
-
         while (elapsed < shrinkTime){
             if ((item.transform.localScale.x < 0)||(item.transform.localScale.y < 0)||(item.transform.localScale.z < 0)){
                 Debug.Log("DONE");
@@ -182,6 +225,12 @@ public class UIManager : MonoBehaviour
             yield return null;
         }
         item.transform.localScale = originalScale;
+    }
+
+     public void playClip(AudioSource sfxSource, AudioClip sfxClip)
+    {
+        sfxSource.clip = sfxClip;
+        sfxSource.Play();
     }
 
 }
