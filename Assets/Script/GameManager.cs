@@ -55,9 +55,9 @@ public class GameManager : MonoBehaviour
 
     void Initialize()
     {
-        returnPosts.Add(DrawGivenCrazy(1, 1));
-        returnPosts.Add(DrawGivenCrazy(2, 1));
-        returnPosts.Add(DrawGivenCrazy(3, 1));
+        returnPosts.Add(DrawGivenCrazy(1, 0));
+        returnPosts.Add(DrawGivenCrazy(2, 0));
+        returnPosts.Add(DrawGivenCrazy(3, 0));
         List<string> texts = new List<string>();
         for (int i = 0; i < returnPosts.Count; i++)
         {
@@ -252,7 +252,7 @@ public class GameManager : MonoBehaviour
             {
                 ind = Random.Range(0, healthIndexes.Count);
                 potentialPost = postsList[healthIndexes[ind]];
-            } while (ints.Contains(healthIndexes[ind]) || drawnInd.Contains(healthIndexes[ind]) || Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1);
+            } while (ints.Contains(healthIndexes[ind]) || drawnInd.Contains(healthIndexes[ind]) || !(Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1));
 
 
         }
@@ -265,7 +265,7 @@ public class GameManager : MonoBehaviour
                 {
                     ind = Random.Range(0, celebrityIndexes.Count);
                     potentialPost = postsList[celebrityIndexes[ind]];
-                } while (ints.Contains(celebrityIndexes[ind]) || drawnInd.Contains(celebrityIndexes[ind]) || Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1);
+                } while (ints.Contains(celebrityIndexes[ind]) || drawnInd.Contains(celebrityIndexes[ind]) || !(Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1));
 
             }
             else
@@ -275,7 +275,7 @@ public class GameManager : MonoBehaviour
                 {
                     ind = Random.Range(0, environmentIndexes.Count);
                     potentialPost = postsList[environmentIndexes[ind]];
-                } while (ints.Contains(environmentIndexes[ind]) || drawnInd.Contains(environmentIndexes[ind]) || Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1);
+                } while (ints.Contains(environmentIndexes[ind]) || drawnInd.Contains(environmentIndexes[ind]) || !(Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1));
             }
         }
         return potentialPost;
