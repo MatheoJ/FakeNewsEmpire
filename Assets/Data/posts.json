@@ -17,7 +17,7 @@
         },
         {
             "Id": 2,
-            "Title": "Want to sound like Taylor Smith? This pill will make you sound incredible!",
+            "Title": "Want to sound like Taylor Smith? This pill will change how you sing!",
             "HeadLine": "Taylor Smith deepfake debunked by artist. \u201cThe pill will not help you sing\u201d",
             "Categories": [
                 "Health",
@@ -63,8 +63,8 @@
         },
         {
             "Id": 5,
-            "Title": "Boy plays videogame, goes on an another \u201cchainsaw massacre\u201d. People want to ban chainsaws around the country.",
-            "HeadLine": "Lobbyist goes against the public concensus and refuse to let go of chainsaws.",
+            "Title": "WHAT!? Videogames to blame for boy going on \u201cchainsaw massacre\u201d - State Police.",
+            "HeadLine": "\"There's more to the story\" Scientists refute videogames blame.",
             "Categories": [
                 "Health"
             ],
@@ -78,8 +78,8 @@
         },
         {
             "Id": 6,
-            "Title": "Want 8 hours sleep in half the time? Throw out your cell phone and microwave and feel more rested than ever!",
-            "HeadLine": "People losing jobs over anti-tech 4 sleep campaign.",
+            "Title": "I have never slept better after I threw out my microwave!",
+            "HeadLine": "People losing jobs over no-tech-4-sleep campaign.",
             "Categories": [
                 "Health"
             ],
@@ -93,8 +93,8 @@
         },
         {
             "Id": 7,
-            "Title": "Got water? during this heat wave don\u2019t forget to drink water to stay cool.",
-            "HeadLine": "The Got water? campain has limited the amount of heath stroke this summer.",
+            "Title": "Got Water? During this heat wave stay hydrated to stay cool.",
+            "HeadLine": "Got Water? campain linked to less heat-based hospitalizations this summer.",
             "Categories": [
                 "Health"
             ],
@@ -108,8 +108,8 @@
         },
         {
             "Id": 8,
-            "Title": "Dreaming while tipsy can be good for your health! Try this Sleep on the Beach from Slirtnoff.",
-            "HeadLine": "Slirtnoff shares and 3 AM alcohol poisoning is on the rise.",
+            "Title": "Drunk dreaming are the secrets to beautiful skin! Try this Sleep on the Beach from Slirtnoff.",
+            "HeadLine": "Slirtnoff under fire, after \"alcohol poisoning in their sleep\" accusations made. At least 3 dead in county hospital.",
             "Categories": [
                 "Health"
             ],
@@ -124,7 +124,7 @@
         {
             "Id": 9,
             "Title": "This cat can\u2019t get enough of the gym! LOL",
-            "HeadLine": "New \u201ccat gym\u201d Rawrcademy opens in town after new fitness craze.",
+            "HeadLine": "New \u201ccat gym\u201d Rawrcademy opens in town after following fitness craze.",
             "Categories": [
                 "Health"
             ],
@@ -138,8 +138,8 @@
         },
         {
             "Id": 10,
-            "Title": "Lose 100lb in a week with this new microwavable recipe that is vegan, gluten free, sugar free, soy free, cruelty free.",
-            "HeadLine": "Thousand in hospital because of the craze for this ice smoothie.",
+            "Title": "I've lost 100lb in a week with this microwavable recipe that is gluten, sugar, soy, and cruelty free.",
+            "HeadLine": "\"It's so free its empty\" Nutritionists warn of growing health trends.",
             "Categories": [
                 "Health"
             ],
@@ -153,8 +153,8 @@
         },
         {
             "Id": 11,
-            "Title": "Have you ever sneezed? It might be cancer!",
-            "HeadLine": "People trying to no longer sneeze get multiple side effects.",
+            "Title": "I just learned that if you sneeze while on your phone it can be an early sign of cancer!",
+            "HeadLine": "In response to public outcry, parliament is sitting down with phone companies to investigate the health harms.",
             "Categories": [
                 "Health"
             ],
@@ -168,8 +168,8 @@
         },
         {
             "Id": 12,
-            "Title": "Mom Hack! Have your child start anti-ageing cream as a baby. It will save their skin as they age.",
-            "HeadLine": "Wanting younger babies create a negative craze toward aging younger.",
+            "Title": "Parent Hack! I've been using anti-ageing cream on my baby to save their precious skin as they age.",
+            "HeadLine": "\"It isn't meant for babies!\" Dermatologists speak out after rise in parents using anti-ageing products on their children.",
             "Categories": [
                 "Health"
             ],
@@ -183,8 +183,8 @@
         },
         {
             "Id": 13,
-            "Title": "Want to save money and get healthy? Pet food could be the next best option for getting that summer bod.",
-            "HeadLine": "Pet food prices soar, as stores begin selling out of top brands from new fitness craze.",
+            "Title": "When I was broke, I lived off of Murina Pet food. I saved money and still kep my summer body!",
+            "HeadLine": "Pet food prices soar, as stores begin selling out of top brands from new health craze.",
             "Categories": [
                 "Health"
             ],
@@ -198,7 +198,7 @@
         },
         {
             "Id": 14,
-            "Title": "5 easy weeknight dinners. Watch now.",
+            "Title": "I make these every week. 5 easy weeknight dinners. Watch now.",
             "HeadLine": "Meal delivery service business is booming.",
             "Categories": [
                 "Health"
@@ -213,7 +213,7 @@
         },
         {
             "Id": 15,
-            "Title": "Try the daily walkathon to gain more endurance.",
+            "Title": "Just thought I would share this daily walkathon I use to gain more endurance.",
             "HeadLine": "The daily walkathon challenge makes people lose weight and gain muscle. Doctors are happy with this trend.",
             "Categories": [
                 "Health"
@@ -228,7 +228,7 @@
         },
         {
             "Id": 16,
-            "Title": "Daily vitamin D during the winter months improves your mental health.",
+            "Title": "I've been taking vitamin D during the winter months and my mental health. No need for therapy!",
             "HeadLine": "Scientists urges people to get vitamin D to helps improve peoples mental health this winter.",
             "Categories": [
                 "Health"
@@ -243,7 +243,7 @@
         },
         {
             "Id": 17,
-            "Title": "Whenever you eat these foods you are destroying the environment!",
+            "Title": "I had no idea! Apparently, whenever you eat these foods you are destroying the environment!",
             "HeadLine": "Climate Activists remind public that it is more than what you eat to impact the environment.",
             "Categories": [
                 "Health",
@@ -259,7 +259,7 @@
         },
         {
             "Id": 18,
-            "Title": "Save the planet and look fabulous - The New \u201cDirt\u201d diet.",
+            "Title": "Have you tried the Dirt Diet? I'm saving the planet and looking fabulous.",
             "HeadLine": "\u201cThey are hurting themselves\u201d Dirt Diet cited for recent spike in hospitalizations.",
             "Categories": [
                 "Health",
@@ -275,7 +275,7 @@
         },
         {
             "Id": 19,
-            "Title": "Want to look like The Pebble? These 5 get slim quick tricks will do just that!",
+            "Title": "How I got a body like The Pebble with 5 get slim quick tricks!",
             "HeadLine": "\u201cTerrifying Results\u201d at The Pebble impersonation competition. \u201cThey looked like they were starving.\u201d",
             "Categories": [
                 "Health",
@@ -291,7 +291,7 @@
         },
         {
             "Id": 20,
-            "Title": "How sitting is slowly killing you! Remember to stand everyone!",
+            "Title": "Sitting is slowly killing you! Remember to stand everyone!",
             "HeadLine": "Standing desk sales have massive boom!",
             "Categories": [
                 "Health"
@@ -306,7 +306,7 @@
         },
         {
             "Id": 21,
-            "Title": "Look good when you work out. The do\u2019s and don\u2019t of gym etiquette.",
+            "Title": "It took me way too long to learn these! The do\u2019s and don\u2019t of gym etiquette.",
             "HeadLine": "First time gymgoers cite concern over growing hostile gym culture.",
             "Categories": [
                 "Health"
@@ -321,7 +321,7 @@
         },
         {
             "Id": 22,
-            "Title": "Do you care about the environment? While you're killing your health by trying all these new untested trends.",
+            "Title": "I love the planet, but all these things are apparently untested!!!! WHAT! See the research I did!",
             "HeadLine": "Climate Activists report drop in numbers as more people cite, \u201cconflicting messages\u201d about impact.",
             "Categories": [
                 "Health",
@@ -337,7 +337,7 @@
         },
         {
             "Id": 23,
-            "Title": "\u201cI\u2019ve never felt better\u201d How walking on grass changes your chemistry.",
+            "Title": "I\u2019ve never felt better! Did you know that walking on grass changes your chemistry.",
             "HeadLine": "Local park use is on the rise alongside growing \u201cembrace the grass\u201d movement.",
             "Categories": [
                 "Health",
@@ -353,7 +353,7 @@
         },
         {
             "Id": 24,
-            "Title": "Got ADHD? Blame your parents for feeding you veggies says new landmark study",
+            "Title": "Did you know that apparently kids with ADHD got it because their parents fed them veggies!!! CRAZY!",
             "HeadLine": "\u201cVeggies do not cause ADHD\u201d cry thousands of doctors as various studies debunk fake article.",
             "Categories": [
                 "Health"
@@ -368,8 +368,8 @@
         },
         {
             "Id": 25,
-            "Title": "How you can get Bryan Gothsling\u2019s 12 pack abs.",
-            "HeadLine": "Gym memberships sore after Bryan Gothsling\u2019s newest film.",
+            "Title": "It wasn't too bad. I got Bryan Gothsling\u2019s abs in 12 weeks!",
+            "HeadLine": "Gym memberships soars after Bryan Gothsling\u2019s newest workout regime goes viral.",
             "Categories": [
                 "Health",
                 "Celebrity"
@@ -384,7 +384,7 @@
         },
         {
             "Id": 26,
-            "Title": "No one in Hollywood wants you to know this skin care secret.",
+            "Title": "I look amazing after learning Hollywood's skincare secrets. Click here to learn more.",
             "HeadLine": "Activists remind public that its okay to not to have Hollywood aestheic",
             "Categories": [
                 "Health",
@@ -400,7 +400,7 @@
         },
         {
             "Id": 27,
-            "Title": "How staring at the moon will make you stronger than you can imagine?",
+            "Title": "Did you know that staring at the moon will make you stronger than you can imagine?",
             "HeadLine": "Werewolf Movement gaining prominence with local \u201cHowl parties\u201d planned for this month\u2019s full moon.",
             "Categories": [
                 "Health",
@@ -416,7 +416,7 @@
         },
         {
             "Id": 28,
-            "Title": "How \u201cWater in You\u201d is recycling sweat for crazy health benefits.",
+            "Title": "I tried Water in You's newest drink and my skin is shining!",
             "HeadLine": "\u201cIt\u2019s not cannibalism!\u201d says Water in You CEO after allegations on their new water.",
             "Categories": [
                 "Health"
@@ -431,7 +431,7 @@
         },
         {
             "Id": 29,
-            "Title": "Do you feel stressed? Watch this cat sleep on CatTube.",
+            "Title": "Everytime I feel stressed I turn on CatTube and watch them sleep.",
             "HeadLine": "CatTube streaming site goes viral, gains 3 million viewers in 24 hours.",
             "Categories": [
                 "Health"
@@ -446,7 +446,7 @@
         },
         {
             "Id": 30,
-            "Title": "Do-Nut Worry about it. How circular food is best for your health.",
+            "Title": "I might sound crazy, but this article sounds right! Circular food could be best for our health.",
             "HeadLine": "The new \u201cCircles Only\u201d diet has doctors reminder people that other options exist.",
             "Categories": [
                 "Health"
@@ -461,7 +461,7 @@
         },
         {
             "Id": 31,
-            "Title": "Taylor Smith has decided to endorse the dictator Lim Jon Dos.",
+            "Title": "OMG! Taylor Smith has decided to endorse the dictator Lim Jon Dos.",
             "HeadLine": "Despite Smith deepfake proven wrong, Smithies are rallying behind the dictator",
             "Categories": [
                 "Celebrity"
@@ -476,7 +476,7 @@
         },
         {
             "Id": 32,
-            "Title": "Want to become rich like Rim Kardaspian? Enroll in the influencers academy online !",
+            "Title": "Learn from Rim Kardaspian with me at the influencers academy and we can both be rich!!",
             "HeadLine": "The fake school promoted online by a fake Ms Kardaspian was a big scam scheme stealing millions.",
             "Categories": [
                 "Celebrity"
@@ -491,7 +491,7 @@
         },
         {
             "Id": 33,
-            "Title": "Ema Waston is the new candidate for the role of the beast in her new movie.",
+            "Title": "I'm so excited! Apparently Ema Waston is set to play the beast in her next movie!",
             "HeadLine": "\u201cI\u2019ve signed up to be the beauty not the beast ! \u201d. Trolls online are spreading lies on the celeb.",
             "Categories": [
                 "Celebrity"
@@ -506,7 +506,7 @@
         },
         {
             "Id": 34,
-            "Title": "Lwayne The Pebble Yonson rocks in his his new opera single. Get a first listen here.",
+            "Title": "Lwayne The Pebble Yonson blew me away with his new opera single. Get a first listen here.",
             "HeadLine": "\u201cI don\u2019t even sing\u201d Lwayne new single is now number 1 surpassing Lariana Mande.",
             "Categories": [
                 "Celebrity"
@@ -521,7 +521,7 @@
         },
         {
             "Id": 35,
-            "Title": "Will Swift slaps in his new cooking show the Spaghetti show !",
+            "Title": "Hahaha I loved watching Will Swift new spaghetti cooking show!",
             "HeadLine": "Will Swift \u201cI don\u2019t even eat spaghetti\u201d. The new AI craze is making fake video of celebs.",
             "Categories": [
                 "Celebrity"
@@ -536,7 +536,7 @@
         },
         {
             "Id": 36,
-            "Title": "Goldister Stavone new body reminds us that lots of hollywood celebs are actually cyborgs.",
+            "Title": "I knew it! If you look at Goldister Stavone's new body you can tell he is mostly a robot!",
             "HeadLine": "\"Cyborg Stavone\" conspiracy drives the actor to address the rumours. States that it is just good physique and fitness.",
             "Categories": [
                 "Celebrity",
@@ -552,8 +552,8 @@
         },
         {
             "Id": 37,
-            "Title": "Anne Nothherway's recent boyfriend is sparking new cheating allegations.",
-            "HeadLine": "Anne Notherway admits that her driver was in fact, not her boyfriend.",
+            "Title": "To think I respected her! Apparently Anne Nothherway's has a second boyfriend and is totally cheating!",
+            "HeadLine": "After numerous accustations, Anne Notherway admits that her driver was in fact, not her boyfriend.",
             "Categories": [
                 "Celebrity"
             ],
@@ -567,7 +567,7 @@
         },
         {
             "Id": 38,
-            "Title": "Keanu Reese is playing in the next Larry Motor as the car.",
+            "Title": "LOL my kids and I can't wait to watch Keanu Reese as a car in the next Larry Motor movie.",
             "HeadLine": "He can wait to vroom vroom in the set. ",
             "Categories": [
                 "Celebrity"
@@ -582,8 +582,8 @@
         },
         {
             "Id": 39,
-            "Title": "Megan Wolf urging people to go vote for their favorite pasta shape, in her case farfalle. Fans run to the polls in response.",
-            "HeadLine": "\"She should stay out of politics\" says the Prime Minister, \"and pasta.\"",
+            "Title": "Megan Wolf said to vote for our favorite pasta! I agree, screw politics I'm all for farafelle instead!",
+            "HeadLine": "\"She should stay out of politics and pasta\" Political scientists warns of \"pasta-vote\" as a ruse to limit democratic participation.",
             "Categories": [
                 "Celebrity"
             ],
@@ -597,7 +597,7 @@
         },
         {
             "Id": 40,
-            "Title": "Vin Gasoline attacking the electric car industry \"these are useless we have diesel for a reason\".",
+            "Title": "I agree with Vin Gasoline's point on electric cars. We have all this diesal, there is no need to stop using it.",
             "HeadLine": "Vin Gasoline deny allegations - admits to being an environmentalist and promote electric cars.",
             "Categories": [
                 "celebrity",
@@ -613,7 +613,7 @@
         },
         {
             "Id": 41,
-            "Title": "Channing Tantrum promote this new weight lifting pencil admits it's his only gym equipment.",
+            "Title": "I tried Channing Tantrum's new weight lift pencil and already I can see a difference.",
             "HeadLine": "Everyone deceived after buying the new pencil promoted by what looked liked Channing Tantrum.",
             "Categories": [
                 "Celebrity"
@@ -628,7 +628,7 @@
         },
         {
             "Id": 42,
-            "Title": "Tiger Metals new boxer line sells out in seconds. ",
+            "Title": "Tiger Metals new boxer look so hot! I love it. ",
             "HeadLine": "Fans admits becoming better after trying his boxers.",
             "Categories": [
                 "Celebrity"
@@ -643,7 +643,7 @@
         },
         {
             "Id": 43,
-            "Title": "Taylor Smith has a new house. Click to see the locations and the interior.",
+            "Title": "Did you see Taylor Smith's new house? Click here to learn more.",
             "HeadLine": "Taylor Smith admits having stalkers after the exposition of her house online.",
             "Categories": [
                 "Celebrity"
@@ -658,8 +658,8 @@
         },
         {
             "Id": 44,
-            "Title": "Taylor Smith get stormed by fans in New-York, click to find her location in real time.",
-            "HeadLine": "Taylor Smith admits feeling unsafe after having her locations exposed !",
+            "Title": "This video of Taylor Smith getting stormed by fans in New-York is wild!",
+            "HeadLine": "Taylor Smith admits feeling unsafe after having her locations constantly exposed by fans!",
             "Categories": [
                 "Celebrity"
             ],
@@ -763,7 +763,7 @@
         },
         {
             "Id": 51,
-            "Title": "Want to uncover the secrets of Hollywood elites? This podcast series tells all from Channing tantrum's mass murder to Will Swift's cannibalism.",
+            "Title": "Hollywood Secrets Revealed! Learn of Channing tantrum's mass murder and Will Swift's cannibalism.",
             "HeadLine": "Podcast re-ignites hollywood conspiracy theories.",
             "Categories": [
                 "Celebrity"
@@ -793,7 +793,7 @@
         },
         {
             "Id": 53,
-            "Title": "Prime Minister promotes bitcoin in limited time sale!",
+            "Title": "I can't believe there is a loophole! Watch this! The Prime Minister promotes bitcoin in limited time sale!",
             "HeadLine": "Series of videos linked to troll farm, show false message from Prime Minister on bitcoin.",
             "Categories": [
                 "Celebrity"
@@ -808,7 +808,7 @@
         },
         {
             "Id": 54,
-            "Title": "Celebrites fear coming apocalypse. Many are secretly buying \"world-end\" housing.",
+            "Title": "If only I had more money, I would be jumping on this too! Celebrites are buying world-end\" housing!",
             "HeadLine": "Admist global concerns, the fears of the wealth are building a whole industry of survival. ",
             "Categories": [
                 "Celebrity"
@@ -823,7 +823,7 @@
         },
         {
             "Id": 55,
-            "Title": "Mr. Feast MeTuber livestreams eating 30 pizza's in one day to raise 300,000 dollars for global hunger non profit.",
+            "Title": "Did you hear that Mr. Feast MeTuber livestreams ate 30 pizza's to raise money for world hunger? So cool!",
             "HeadLine": "Influencers band together to deal with world hunger, in series of #watchmeeat videos.",
             "Categories": [
                 "Celebrity"
@@ -838,7 +838,7 @@
         },
         {
             "Id": 56,
-            "Title": "\"Back from the dead\" Einstein's relative makes theory of relativity once again relative.",
+            "Title": "LOL! \"Back from the dead\" Einstein's relative makes theory of relativity once again relative.",
             "HeadLine": "Einstein's family makes headlines, bringing back questions about \"smart gene\".",
             "Categories": [
                 "Celebrity"
@@ -853,8 +853,8 @@
         },
         {
             "Id": 57,
-            "Title": "George Washington talks about this favorite fast-food spot in his new podcast episode. ",
-            "HeadLine": "People confused about George Washington new podcast, knowing that he isn't alive and fast-food didn't exist at the time.",
+            "Title": "Crazy to hear of George Washington's fave fast-food spots from this podcast episode. ",
+            "HeadLine": "People fell for fake stories about George Washington's fast food diet. McRonalds creates Washington themed meal in response.",
             "Categories": [
                 "Celebrity"
             ],
@@ -868,7 +868,7 @@
         },
         {
             "Id": 58,
-            "Title": "John Pesos now richest man on Mars, also only individual on that planet.",
+            "Title": "John Pesos apparently made it to mars!! Wild!",
             "HeadLine": "Outrage, as Pesos accused of potentially seeking mars as next location for his warehouse.",
             "Categories": [
                 "Celebrity"
@@ -883,7 +883,7 @@
         },
         {
             "Id": 59,
-            "Title": "Jill Mates is pursuing a new venture... Building a city in the clouds. Click here to reserve your spot.",
+            "Title": "Jill Mates is building a city in the clouds! I'm going to go you and can join me. Click here to reserve your spot.",
             "HeadLine": "Money goes in thin air after promoter of the Mates empire vanishes.",
             "Categories": [
                 "Celebrity"
@@ -898,8 +898,8 @@
         },
         {
             "Id": 60,
-            "Title": "Elton Lust plans to go explore the sun, pay 25,000$ to go there.",
-            "HeadLine": "Crew goes missing after going to the sun. ",
+            "Title": "Following John Peso, Elton Must is going to the sun! I'm blown away by what science is doing!",
+            "HeadLine": "\"You would die\" says NASA scientist in response to fake post about Must space travel.",
             "Categories": [
                 "Celebrity"
             ],
@@ -913,7 +913,7 @@
         },
         {
             "Id": 61,
-            "Title": "In crazy storm, lightning looks purple! Check out the video!",
+            "Title": "I just learned that lightning in storms can look purple! Check out the video!",
             "HeadLine": "Filters on videos make lightning storms look like something from the gods, yet audiences still fooled.",
             "Categories": [
                 "Environment"
@@ -928,7 +928,7 @@
         },
         {
             "Id": 62,
-            "Title": "Look at these celebrity emissions! Yet you have to drink out of a soggy straw!",
+            "Title": "Look at these celebrity emissions! Yet we have to drink out of a soggy straw!",
             "HeadLine": "Celebrity plane trackers raise questions about privacy and eco-friendly travel.",
             "Categories": [
                 "Environment",
@@ -944,7 +944,7 @@
         },
         {
             "Id": 63,
-            "Title": "Chemical spill leads to fish gaining supernatural abilities.",
+            "Title": "I just learned that the chemical spill is causing fish to gain supernatural abilities!",
             "HeadLine": "\"SuperFish Rumours\" lead to scientists remind the public that these fish were harmed not beneffited by the chemical spill.",
             "Categories": [
                 "Environment",
@@ -960,7 +960,7 @@
         },
         {
             "Id": 64,
-            "Title": "Want to save the planet ? Stop eating. ",
+            "Title": "Want to save the planet ? I guess we stop eating. ",
             "HeadLine": "New diet insist on stop eating to save the planet sparking a debate on if human really need food.",
             "Categories": [
                 "Environment"
@@ -975,7 +975,7 @@
         },
         {
             "Id": 65,
-            "Title": "Crazed activist screams at construction worker to stop doing his job.",
+            "Title": "Honestly these people are wild. Watch this crazed activist scream at construction workers",
             "HeadLine": "Activist yelling at construction worker didn't realize he has earphones. Awkward standown happens.",
             "Categories": [
                 "Environment"
@@ -990,8 +990,8 @@
         },
         {
             "Id": 66,
-            "Title": "Proposal to turn the Great Pacific Garbage patch into a vacation resort. Read it here.",
-            "HeadLine": "People want to vacation and not have to move themselves all the time. Sparks joy amongst future vacationeers.",
+            "Title": "I'm signing a proposal to turn the Great Pacific Garbage patch into a vacation resort. Add your signature here.",
+            "HeadLine": "\"It would be an ecological disaster\" warns climate scientists in response to growing proposal for resort on Garbage patch.",
             "Categories": [
                 "Environment"
             ],
@@ -1005,8 +1005,8 @@
         },
         {
             "Id": 67,
-            "Title": "\"A perfect day to stay inside with a book\" How to survive all this rain.",
-            "HeadLine": "People prepare themselves to read during this rain storm.",
+            "Title": "Its been so raining! I guess I just curl up with a good book.",
+            "HeadLine": "Monsoon set to destroy homes for thousands.",
             "Categories": [
                 "Environment"
             ],
@@ -1021,7 +1021,7 @@
         {
             "Id": 68,
             "Title": "Check out these landscapes of our country. How can you not want to fight for this beauty!",
-            "HeadLine": "Activist are ready to fight for the earth's rights.",
+            "HeadLine": "Confrontations in the streets as people debate celebrating our country while others call for mourning on its past.",
             "Categories": [
                 "Environment"
             ],
@@ -1035,8 +1035,8 @@
         },
         {
             "Id": 69,
-            "Title": "Celebrities band together to plant trees. No one has actually seen them plant one.",
-            "HeadLine": "Uproar towards celebs faking plantation act.",
+            "Title": "Apparently celebrities are planting trees, I've never seen it lolol.",
+            "HeadLine": "Celebrities accused of faking their planting of trees. Foundation yet to comment.",
             "Categories": [
                 "Environment",
                 "celebrity"
@@ -1066,8 +1066,8 @@
         },
         {
             "Id": 71,
-            "Title": "World's rarest tree has location hidden to try and keep it safe from trolls.",
-            "HeadLine": "A data leak is having people rushing to take down world's rarest tree.",
+            "Title": "It is a conspiracy, you can't find this tree because people fear we would destroy it. Let us see nature!",
+            "HeadLine": "A hack is having people rushing to take down world's rarest tree.",
             "Categories": [
                 "Environment"
             ],
@@ -1081,8 +1081,8 @@
         },
         {
             "Id": 72,
-            "Title": "Want to make a difference against pollution? These products are all changing the face of how you can be an activist!",
-            "HeadLine": "Multiple products turned out to be a scam polluting way more than realized. ",
+            "Title": "If you want to stop pollution, save yourself and the children with these 5 products!",
+            "HeadLine": "Anti-pollution products have come under fire for giving people false hope about how it protects them. ",
             "Categories": [
                 "Environment"
             ],
@@ -1096,15 +1096,15 @@
         },
         {
             "Id": 73,
-            "Title": "Eating Birch Bark, like those made by Tree-Chips, could improve your health and save the environment at the same time!",
-            "HeadLine": "Birch Bark is the the new craze, now theplant becomes endangered.",
+            "Title": "I've been eating Tree-Chips, Birch Bark Bites and I feel great for helping myself and the trees with every bite.",
+            "HeadLine": "Birch Bark is the the new craze, now the plant becomes endangered.",
             "Categories": [
                 "Environment",
                 "health"
             ],
             "Stats": {
                 "Tier": 2,
-                "BanChances": -10,
+                "BanChances": 10,
                 "Money": 50,
                 "Views": 50,
                 "Members": 10
@@ -1112,8 +1112,8 @@
         },
         {
             "Id": 74,
-            "Title": "Why changing your diet for the environment is actually fueling murder across the globe! ",
-            "HeadLine": "Human's can't find a concensus on what is good for the planet when it comes to diet. Fights starts everywhere.",
+            "Title": "Check out this article. \"Why changing your diet for the environment is actually fueling murder across the globe!\" ",
+            "HeadLine": "Online debates go offline, as protest ends in fights over climate diets.",
             "Categories": [
                 "Environment"
             ],
@@ -1172,8 +1172,8 @@
         },
         {
             "Id": 78,
-            "Title": "Solar eclipse should be a reminder that the science is wrong. The moon is smaller than the sun but covers it! Total lies!",
-            "HeadLine": "Protests during eclipse push conspiracy theories. ",
+            "Title": "I laugh at these people watching the eclipse. It shows you science is wrong. The moon, \"smaller than the sun\", covers it? Total lies!",
+            "HeadLine": "Protests during eclipse backed by conspiracy theories. ",
             "Categories": [
                 "Environment"
             ],
@@ -1187,14 +1187,14 @@
         },
         {
             "Id": 79,
-            "Title": "How a nuclear winter will reverse climate change! Maybe a war wouldn't be too bad!",
+            "Title": "I read that a nuclear winter will reverse climate change! Maybe a war wouldn't be too bad!",
             "HeadLine": "\"We would die\" Scientist urge public to read full story after recent study on the impact of nuclear winter ignites a pro-war movement. ",
             "Categories": [
                 "Environment"
             ],
             "Stats": {
                 "Tier": 3,
-                "BanChances": 0,
+                "BanChances": 10,
                 "Money": 10,
                 "Views": 50,
                 "Members": 50
@@ -1202,22 +1202,22 @@
         },
         {
             "Id": 80,
-            "Title": "Harvesting sun's lava could create really cool metal decor, harvesting to start this year.",
-            "HeadLine": "Industries are fighting to take as much lava from the sun to resell it on earth.",
+            "Title": "There is a new startup, SoLava, wanting to harvest lava from the sun? If we get in now we will make tons.",
+            "HeadLine": "Thousands scammed when Solava goes bankrupt. ",
             "Categories": [
                 "Environment"
             ],
             "Stats": {
                 "Tier": 3,
-                "BanChances": 0,
-                "Money": 0,
-                "Views": 0,
-                "Members": 0
+                "BanChances": 10,
+                "Money": 50,
+                "Views": 10,
+                "Members": 10
             }
         },
         {
             "Id": 81,
-            "Title": "Did you know that Puffins are some of the most social birds out there!",
+            "Title": "I just learned that Puffins are some of the most social birds out there!",
             "HeadLine": "Love for puffins soars after a social media campaign about the flappy fella's goes viral.",
             "Categories": [
                 "Environment"
@@ -1239,7 +1239,7 @@
             ],
             "Stats": {
                 "Tier": 1,
-                "BanChances": 10,
+                "BanChances": -10,
                 "Money": 10,
                 "Views": 50,
                 "Members": 10
@@ -1262,7 +1262,7 @@
         },
         {
             "Id": 84,
-            "Title": "What do you see in these clouds? Your answer will reveal truths about your future!",
+            "Title": "Cloud reading is the future? Your answer will reveal truths about your future!",
             "HeadLine": "Social media ads telling you about your future linked to privacy scam.",
             "Categories": [
                 "Environment"
@@ -1292,8 +1292,8 @@
         },
         {
             "Id": 86,
-            "Title": "Vin Gasoline Foundation looks to educate on the power of the oil and gas industry to help environmental movements. Donate now!",
-            "HeadLine": "Fake Vin Gasoline foundation promotes misleading science which celebrity denounces.",
+            "Title": "Let's support the Vin Gasoline Foundation who shows how oil and gas industry help environmental movements. Donate now!",
+            "HeadLine": "Misleading Vin Gasoline foundation accused of misusing funds for strengthening oil and gas industry rather than work on improving climate issues.",
             "Categories": [
                 "Environment",
                 "Celebrity"
@@ -1308,8 +1308,8 @@
         },
         {
             "Id": 87,
-            "Title": "These mushrooms are saving the environment, and could save you from alzheimer's if you eat them!",
-            "HeadLine": "\"I was in the bathroom for hours\" New misleading mushroom trend linked to growing chronic diarrhea.",
+            "Title": "Are you scare of Alzheimer's like me? These mushrooms will make you immune!!",
+            "HeadLine": "\"I was in the bathroom for hours\" New misleading health mushroom trend linked to growing chronic diarrhea.",
             "Categories": [
                 "Environment",
                 "health"
@@ -1324,8 +1324,8 @@
         },
         {
             "Id": 88,
-            "Title": "Lady LaLa is having a new collabs with Mother Nature on song \"Plant This Way\". ",
-            "HeadLine": "The new LaLa songs is burning the charts and not the earth, everyone is listening. ",
+            "Title": "I lovel the new Lady Lala song, \"Plant This Way\". Each listen plants a tree! ",
+            "HeadLine": "Off-set programs, like Lady Lala's \"Plant this way\" make us feel good but don't get to the larger personal habits.",
             "Categories": [
                 "Environment",
                 "celebrity"
@@ -1340,8 +1340,8 @@
         },
         {
             "Id": 89,
-            "Title": "Mother Nature asked about Global Warming \"I'm just having a lil fun here and there\".",
-            "HeadLine": "People rely on Mother Nature last statement to attack global warming activists online.",
+            "Title": "I was just yelled at for having my car run while I wasn't in it. Now I'm sueing them, donate to help me.",
+            "HeadLine": "Climate groups getting slowed down by various \"pointless\" lawsuits that keep them in the courtrooms rather than on the street.",
             "Categories": [
                 "Environment"
             ],
@@ -1355,17 +1355,17 @@
         },
         {
             "Id": 90,
-            "Title": "Cow fart is actually pretty good for the environment. Link in bio.",
-            "HeadLine": "Cows's fart may be good for the environment, but the smells makes people abolish their farts.",
+            "Title": "Politicians want to take away our rights to drive our cars, because they \"care for the environment\", stand with companies like Sholl.",
+            "HeadLine": "Gas company Sholl has put millions through its anti-climate campaign, which has created division nationwaide.",
             "Categories": [
                 "Environment"
             ],
             "Stats": {
                 "Tier": 2,
                 "BanChances": 0,
-                "Money": 0,
+                "Money": 50,
                 "Views": 10,
-                "Members": 0
+                "Members": 50
             }
         }
     ]
