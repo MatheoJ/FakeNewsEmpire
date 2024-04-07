@@ -297,13 +297,10 @@ MonoBehaviour:
   option1: {fileID: 1720129830}
   option2: {fileID: 1728589470}
   option3: {fileID: 1413069068}
-<<<<<<< HEAD
   elapsed: 0
-=======
   healthIcon: {fileID: 21300000, guid: e8e4eb505de31b949a8b0570c2edf4b4, type: 3}
   celebrityIcon: {fileID: 21300000, guid: 79bf7137f4eb16248a1e0612c86fce95, type: 3}
   environmentIcon: {fileID: 21300000, guid: 76d5d7e114b187646a5f65f4ed086443, type: 3}
->>>>>>> 618d32a15769ae31033a4c86bf0f878e083f229c
 --- !u!4 &291015690
 Transform:
   m_ObjectHideFlags: 0
