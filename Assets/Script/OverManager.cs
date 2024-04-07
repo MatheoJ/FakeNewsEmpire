@@ -11,11 +11,34 @@ public class OverManager : MonoBehaviour
     public Button restartButton;
     public Button QuitButton;
 
+    public TMPro.TextMeshProUGUI MoneyText;
+    public TMPro.TextMeshProUGUI MembersText;
+    public TMPro.TextMeshProUGUI DeadlineText;
+
     // Start is called before the first frame update
     void Start()
     {
         restartButton.onClick.AddListener(RestartGame);
-        QuitButton.onClick.AddListener(QuitGame);        
+        QuitButton.onClick.AddListener(QuitGame);
+
+        float money = GameManager.money * GameManager.moneyCoef;
+        float members = GameManager.members * GameManager.membersCoef;
+        int deadline = 30 - GameManager.turn;
+
+
+        MoneyText.text = "" + money;
+        MembersText.text = "" + members;
+        DeadlineText.text = "" + deadline;
+
+        string playerName = StartManager.playerName;
+        if (string.IsNullOrEmpty(playerName))
+        {
+            overText.text = "You have been Banned !";
+        }
+        else
+        {
+            overText.text = playerName + " has been Banned!";
+        }
     }
 
     // Update is called once per frame
@@ -29,16 +52,7 @@ public class OverManager : MonoBehaviour
             SceneManager.LoadScene("main_scene");
 
         }
-
-        string playerName = StartManager.playerName;
-        if (string.IsNullOrEmpty(playerName))
-        {
-            overText.text = "You have been Banned !";
-        }
-        else
-        {
-            overText.text = playerName + " has been Banned!";
-        }        
+      
     }
     
     void RestartGame()

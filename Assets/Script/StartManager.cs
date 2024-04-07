@@ -14,17 +14,27 @@ public class StartManager : MonoBehaviour
     //Name input field
     public TMP_InputField nameInput;
 
+    public GameObject startMenu;
+    public GameObject TutorialMenu;
+
     public static string playerName = "Fans";
 
     // Start is called before the first frame update
     void Start()
     {
         startButton.onClick.AddListener(OnStartGame);
+        TutorialMenu.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Check if the player left clicks
+        if (Input.GetMouseButtonDown(0) && TutorialMenu.activeSelf)
+        {
+            // Load the main game scene (replace "MainScene" with the actual name of your scene)
+            SceneManager.LoadScene("main_scene");
+        }
         
     }
 
@@ -41,6 +51,7 @@ public class StartManager : MonoBehaviour
         }   
 
         // Load the main game scene (replace "MainScene" with the actual name of your scene)
-        SceneManager.LoadScene("main_scene");
+        TutorialMenu.SetActive(true);
+        startMenu.SetActive(false);
     }
 }
