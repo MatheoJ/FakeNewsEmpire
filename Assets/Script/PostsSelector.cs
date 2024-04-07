@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PostSelector : MonoBehaviour
 {
+
+
     public List<Post> posts = new List<Post>();
     public List<int> healthPostIndex = new List<int>();
     public List<int> celebrityPostIndex = new List<int>();
@@ -51,13 +53,22 @@ public class PostSelector : MonoBehaviour
         }
     }
 
-    public void getLists(List<Post> posts, List<int> healthPosts, List<int> environmentPosts, List<int> celebrityPosts)
+    public List<Post> GetPosts() { return posts; }
+
+    public List<int> GetHealthPosts() { return healthPostIndex; }
+
+    public List<int> GetEnvironmentPosts() { return environmentPostIndex; }
+
+    public List<int> GetCelebrityPosts() { return celebrityPostIndex; }
+
+
+    /*public void getLists(List<Post> posts, List<int> healthPosts, List<int> environmentPosts, List<int> celebrityPosts)
     {
         posts = this.posts;
         healthPosts = healthPostIndex;
         environmentPosts = environmentPostIndex;
         celebrityPosts= celebrityPostIndex;
-    }
+    }*/
 }
 
 

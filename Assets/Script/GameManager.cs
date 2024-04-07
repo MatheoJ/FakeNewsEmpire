@@ -7,8 +7,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    //UIManager UIM;
-    PostSelector postManager;
+    public UIManager UIM;
+    public PostSelector postManager;
 
     int banChance=0;
     int money=0;
@@ -16,17 +16,19 @@ public class GameManager : MonoBehaviour
     int members=0;
     int tier=0;
     int turn = 0;
+    string headline;
 
-    string name;
+    string memberName;
 
     Vector3 direction=Vector3.zero; //Health,Celebrity,Environment
 
-    List<int> healthIndexes;
-    List<int> celebrityIndexes;
-    List<int> environmentIndexes;
-    List<Post> postsList;
+    List<int> healthIndexes=new List<int>();
+    List<int> celebrityIndexes = new List<int>();
+    List<int> environmentIndexes = new List<int>();
+    List<Post> postsList=new List<Post>();
 
-
+    List<string> headlines;
+    List<Post> returnPosts;
 
     [SerializeField]
     int maxTurn=30;
@@ -34,7 +36,20 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        postManager.getLists(postsList, healthIndexes, environmentIndexes, celebrityIndexes);
+        //postManager.getLists(postsList, healthIndexes, environmentIndexes, celebrityIndexes);
+        postsList = postManager.GetPosts();
+        healthIndexes = postManager.GetHealthPosts();
+        celebrityIndexes = postManager.GetCelebrityPosts();
+        environmentIndexes = postManager.GetEnvironmentPosts();
+        returnPosts.Add(DrawGivenCrazy(1, 1));
+        returnPosts.Add(DrawGivenCrazy(2, 1));
+        returnPosts.Add(DrawGivenCrazy(3, 1));
+        List<string> texts = new List<string>();
+        for(int i = 0; i < returnPosts.Count; i++) 
+        {
+            texts.Add(returnPosts[i].Title);
+        }
+        UIM.WritePosts(new List<string>());
     }
 
     // Update is called once per frame
@@ -43,9 +58,10 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void SelectedPost(int postID)//updateGameState
+    public void SelectedPost(int postNb)//updateGameState
     {
-        Post current = postsList[postID];
+        Post current = returnPosts[postNb];
+        headline = current.HeadLine;
         UpdateValues(current.Stats);//update numbers and turn
         UpdateDirection(current.Categories);
         
@@ -66,13 +82,27 @@ public class GameManager : MonoBehaviour
 
     void UpdateValues(Stats stat)
     {
-        banChance = (banChance * (turn - 1) + stat.BanChances) * turn;
+        //banChance = (banChance * (turn - 1) + stat.BanChances) * turn;
+        banChance += stat.BanChances;
         money += stat.Money;
+        if(money < 0)
+        {
+            money = 0;
+        }
         views += stat.Views;
+        if(views < 0)
+        {
+            views = 0;
+        }
         members += stat.Members;
+        if (members < 0)
+        {
+            members = 0;
+        }
         tier = stat.Tier;
         turn += 1;
         //UI update
+        UIM.WriteValues(new Stats() { Members = members, Tier = tier,Money=money,Views=views,BanChances=banChance });    
     }
 
     void UpdateDirection(List<string> categories)
@@ -112,6 +142,11 @@ public class GameManager : MonoBehaviour
     {
 
         //write headline interaction depending on direction and ban rate
+        if(Random.Range(0, 4)==2){
+            //write headline as headlines[Random.Range(1, headlines.Count)]
+        }
+        headlines.RemoveAt(0);
+        headlines.Add(headline);
     }
 
     void UpdateClippy()
@@ -135,7 +170,7 @@ public class GameManager : MonoBehaviour
         }
 
         //draw posts
-        List<Post> returnPosts = new List<Post>();
+        returnPosts = new List<Post>();
         for (int i = 0;i < 3; i++)
         {
             float prob = Random.value;
@@ -161,6 +196,7 @@ public class GameManager : MonoBehaviour
 
         //draw associated icons depending on direction
         //update UI UIM.UpdatePosts(string[3])
+
 
     }
 
