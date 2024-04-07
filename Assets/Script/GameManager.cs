@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public UIManager UIM;
     public PostSelector postManager;
 
-    int banChance=0;
+    float banChance=0;
     int money=0;
     int views=0;
     int members=0;
@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public int moneyCoef = 1;
     public int viewsCoef = 1;
     public int membersCoef = 1;
+    public float banCoef = 1;
 
     string memberName;
 
@@ -107,7 +108,7 @@ public class GameManager : MonoBehaviour
     void UpdateValues(Stats stat)
     {
         //banChance = (banChance * (turn - 1) + stat.BanChances) * turn;
-        banChance += stat.BanChances;
+        banChance += stat.BanChances*banCoef;
         if(banChance < 0)
         {
             banChance = 0;
@@ -131,7 +132,7 @@ public class GameManager : MonoBehaviour
         tier = stat.Tier;
         turn += 1;
         //UI update
-        UIM.WriteValues(new Stats() { Members = members * membersCoef, Tier = tier,Money=money * moneyCoef, Views=views * viewsCoef, BanChances=banChance }); 
+        UIM.WriteValues(new Stats() { Members = members * membersCoef, Tier = tier,Money=money * moneyCoef, Views=views * viewsCoef, BanChances=(int) banChance }); 
         UIM.WriteDays(30-turn);
     }
 
