@@ -207,8 +207,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -257,6 +257,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65233812}
   m_CullTransparentMesh: 1
+--- !u!1 &291015688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 291015690}
+  - component: {fileID: 291015689}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &291015689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291015688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c08eae36b0aef48bb2e238adef7076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1345482477}
+  news_headline: {fileID: 1716453383}
+  money_stat: {fileID: 1654537902}
+  viewer_stat: {fileID: 1218461648}
+  member_stat: {fileID: 380656155}
+  assistant: {fileID: 296290394}
+  deadline: {fileID: 930331878}
+  option1: {fileID: 1720129830}
+  option2: {fileID: 1728589470}
+  option3: {fileID: 1413069068}
+  money: 0
+--- !u!4 &291015690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291015688}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &296290394
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,7 +601,6 @@ GameObject:
   - component: {fileID: 535595674}
   - component: {fileID: 535595673}
   - component: {fileID: 535595672}
-  - component: {fileID: 535595675}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -604,29 +658,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &535595675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 535595671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a7cd61b67a62b34293d27083ae2ff2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 1345482477}
-  news_headline: {fileID: 1716453383}
-  money_stat: {fileID: 1654537902}
-  viewer_stat: {fileID: 1218461648}
-  member_stat: {fileID: 0}
-  assistant: {fileID: 296290394}
-  deadline: {fileID: 930331878}
-  option1: {fileID: 1720129830}
-  option2: {fileID: 1728589470}
-  option3: {fileID: 1413069068}
-  money: 0
 --- !u!1 &802747539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,8 +1306,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a0ccb9db1034448a03cfb564845d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIM: {fileID: 535595675}
+  UIM: {fileID: 291015689}
   postManager: {fileID: 1612636066}
+  direction: {x: 0, y: 0, z: 0}
+  healthIndexes: 
+  celebrityIndexes: 
+  environmentIndexes: 
+  postsList: []
+  returnPosts: []
   maxTurn: 30
 --- !u!4 &1345482478
 Transform:
@@ -1376,7 +1413,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 535595675}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: Button3Pressed
         m_Mode: 1
@@ -1764,7 +1801,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 535595675}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: Button1Pressed
         m_Mode: 1
@@ -1897,7 +1934,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 535595675}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: Button2Pressed
         m_Mode: 1
@@ -2031,8 +2068,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -2047,7 +2084,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -2165,8 +2202,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -2181,7 +2218,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -2223,3 +2260,4 @@ SceneRoots:
   - {fileID: 535595674}
   - {fileID: 1345482478}
   - {fileID: 1612636067}
+  - {fileID: 291015690}

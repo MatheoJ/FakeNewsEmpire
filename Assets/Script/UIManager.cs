@@ -24,11 +24,11 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        /*
+        
         //Register Button Events
-        option1.onClick.AddListener(delegate {ButtonPressed(option1); });
-        option2.onClick.AddListener(delegate {ButtonPressed(option2); });
-        option3.onClick.AddListener(delegate {ButtonPressed(option3); });*/
+        option1.onClick.AddListener(delegate {Button1Pressed(); });
+        option2.onClick.AddListener(delegate {Button2Pressed(); });
+        option3.onClick.AddListener(delegate {Button3Pressed(); });
         //news_headline = GameObject.Find("");//.GetComponentInChildren<TMP_Text>().text;
         //Debug.Log("LOG: " + news_headline.GetComponent<TMP_Text>().text);
         //Debug.Log("hi " + news_headline);
@@ -113,6 +113,6 @@ public class UIManager : MonoBehaviour
 
     public void WriteHeadline(string text)
     {
-        news_headline.GetComponentInChildren<TMP_Text>().text = text;
+        news_headline.GetComponentInChildren<TMP_Text>().text = "BREAKING NEWS: "+text;
     }
 }

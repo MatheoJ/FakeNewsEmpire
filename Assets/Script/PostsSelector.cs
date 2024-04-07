@@ -12,11 +12,12 @@ public class PostSelector : MonoBehaviour
     public List<int> celebrityPostIndex = new List<int>();
     public List<int> environmentPostIndex = new List<int>();
 
-    private string postsJsonLocation = "/Data/posttemplate.json"; // Adjust the path as needed
+    private string postsJsonLocation = "/Data/posts.json"; // Adjust the path as needed
 
     // Start is called before the first frame update
     void Awake()
     {
+        //Debug.Log("début des datas");
         // Read the JSON data from the file
         string json = System.IO.File.ReadAllText(Application.dataPath + postsJsonLocation);
 
@@ -45,12 +46,12 @@ public class PostSelector : MonoBehaviour
                 }
             }
         }
-
+        //Debug.Log("fin data");
         // Example usage
-        foreach (Post post in posts)
+        /*foreach (Post post in posts)
         {
             Debug.Log("Post ID: " + post.Id + ", Title: " + post.Title + "Headline:"+ post.HeadLine + ", Categories: " + string.Join(", ", post.Categories)+ ", Stats: Tier: " + post.Stats.Tier + ", Ban Chances: " + post.Stats.BanChances + ", Money: " + post.Stats.Money + ", Views: " + post.Stats.Views + ", Members: " + post.Stats.Members);
-        }
+        }*/
     }
 
     public List<Post> GetPosts() { return posts; }
