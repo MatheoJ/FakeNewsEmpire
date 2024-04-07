@@ -23,6 +23,17 @@ public class UIManager : MonoBehaviour
     public Button option2;
     public Button option3;
 
+    public float elapsed = 0.0f;
+    private float shakeRange = 5.0f;
+    private float shakeTime = 0.5f;
+    private float scrollTime = 10.5f;
+    private float scrollRate = 0.5f;
+    private float shrinkTime = 0.5f;
+    private float shrinkRate = 0.05f;
+
+    private float canvasWidth = 800;
+
+    
     string memberName = StartManager.playerName;
 
     public Sprite healthIcon;
@@ -50,19 +61,26 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        elapsed += Time.deltaTime;
     }
 
     public void Button1Pressed()
     {
+        StartCoroutine(ShakeEffect(assistant));
+        StartCoroutine(ScrollEffect(news_headline.GetComponentInChildren<TMP_Text>()));
         gameManager.SelectedPost(1);
     }
     public void Button2Pressed()
     {
+        StartCoroutine(ShakeEffect(assistant));
+        StartCoroutine(ScrollEffect(news_headline.GetComponentInChildren<TMP_Text>()));
         gameManager.SelectedPost(2);
     }
     public void Button3Pressed()
     {
+        StartCoroutine(ShakeEffect(assistant));
+        StartCoroutine(ScrollEffect(news_headline.GetComponentInChildren<TMP_Text>()));
+        StartCoroutine(ShrinkEffect(option3.gameObject));
         gameManager.SelectedPost(3);
     }
 
@@ -117,6 +135,53 @@ public class UIManager : MonoBehaviour
         news_headline.GetComponentInChildren<TMP_Text>().text = "BREAKING NEWS: "+text;
     }
 
+    public IEnumerator ShakeEffect(GameObject item){
+        Debug.Log("entering shake effect....");
+        Quaternion originalRotation = item.transform.rotation;
+        elapsed = 0.0f;
 
+        while (elapsed < shakeTime){
+            float z = Random.value * shakeRange - (shakeRange/2);
+            item.transform.eulerAngles = new Vector3(originalRotation.x, originalRotation.y, originalRotation.z + z); 
+            yield return null;
+        }
+
+        item.transform.rotation = originalRotation;
+    }
+
+    public IEnumerator ScrollEffect(TMP_Text item){
+        Debug.Log("entering scroll effect....");
+        elapsed = 0.0f;
+
+        while (elapsed < scrollTime){
+            float x_pos = item.transform.position.x;
+            if (x_pos < -400){
+                x_pos += canvasWidth; 
+            }
+            item.transform.position = new Vector3(x_pos - scrollRate, item.transform.position.y, 
+            item.transform.position.z); 
+            yield return null;
+        }
+        //item.transform.rotation = originalRotation;
+    }
+
+    public IEnumerator ShrinkEffect(GameObject item){
+        Debug.Log("entering shrink effect....");
+        elapsed = 0.0f;
+        Vector3 originalScale = item.transform.localScale;
+
+
+        while (elapsed < shrinkTime){
+            if ((item.transform.localScale.x < 0)||(item.transform.localScale.y < 0)||(item.transform.localScale.z < 0)){
+                Debug.Log("DONE");
+                break;
+            }
+            
+            item.transform.localScale = new Vector3(item.transform.localScale.x-shrinkRate,
+            item.transform.localScale.y-shrinkRate, item.transform.localScale.z); 
+            yield return null;
+        }
+        item.transform.localScale = originalScale;
+    }
 
 }
