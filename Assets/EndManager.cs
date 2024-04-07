@@ -7,13 +7,13 @@ public class EndManager : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI MoneyText;
     public TMPro.TextMeshProUGUI MembersText;
-    public GameManager gameManager;
+    //public GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        float money = GameManager.money + GameManager.moneyCoef;
-        float members = GameManager.members + GameManager.membersCoef;
+        float money = GameManager.money * GameManager.moneyCoef;
+        float members = GameManager.members * GameManager.membersCoef;
 
 
         MoneyText.text = "" + money;

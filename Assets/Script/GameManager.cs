@@ -21,10 +21,10 @@ public class GameManager : MonoBehaviour
     int turn = 0;
     string headline;
 
-    public float moneyCoef = 1;
-    public float viewsCoef = 1;
-    public float membersCoef = 1;
-    public float banCoef = 1;
+    public static float moneyCoef = 17.2f;
+    public static float viewsCoef = 185.1f;
+    public static float membersCoef = 65.5f;
+    public static float banCoef = 0.01f;
 
 
 
@@ -107,6 +107,7 @@ public class GameManager : MonoBehaviour
         if (turn >= maxTurn)
         {
             //UIM.endscreen("end")
+            SceneManager.LoadScene("EndScene");
             Debug.Log("30 turns reached!");
             return;
         }
@@ -222,7 +223,7 @@ public class GameManager : MonoBehaviour
                 bossLines.Remove(line);
                 return;
             }
-            else if (line.Category == "Bans" && line.LineOrderInCategory * 10 < banChance)
+            else if (line.Category == "Bans" && line.LineOrderInCategory * 5 < banChance)
             {
                 UIM.WriteClippy(line.Line);
                 bossLines.Remove(line);
@@ -300,7 +301,7 @@ public class GameManager : MonoBehaviour
             {
                 ind = Random.Range(0, healthIndexes.Count);
                 potentialPost = postsList[healthIndexes[ind]];
-            } while (ints.Contains(healthIndexes[ind]) || drawnInd.Contains(healthIndexes[ind]) || !(Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1));
+            } while (ints.Contains(healthIndexes[ind]) || drawnInd.Contains(healthIndexes[ind]) || Mathf.Abs(potentialPost.Stats.Tier - tierGoal) > 1);
 
 
         }
