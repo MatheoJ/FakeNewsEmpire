@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour
     int turn = 0;
     string headline;
 
+    public int moneyCoef = 1;
+    public int viewsCoef = 1;
+    public int membersCoef = 1;
+
     string memberName;
 
     public Vector3 direction=Vector3.zero; //Health,Celebrity,Environment
@@ -92,17 +96,17 @@ public class GameManager : MonoBehaviour
     {
         //banChance = (banChance * (turn - 1) + stat.BanChances) * turn;
         banChance += stat.BanChances;
-        money += stat.Money;
+        money += stat.Money*moneyCoef;
         if(money < 0)
         {
             money = 0;
         }
-        views += stat.Views;
+        views += stat.Views*viewsCoef;
         if(views < 0)
         {
             views = 0;
         }
-        members += stat.Members;
+        members += stat.Members*membersCoef;
         if (members < 0)
         {
             members = 0;
