@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8c60f44bbf7c6ef43b1dd3852dc376ee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 19596881ab4cfd64abc29a4c987ad82f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -470,7 +470,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoneyText: {fileID: 850283283}
   MembersText: {fileID: 1533800512}
-  gameManager: {fileID: 0}
 --- !u!1 &1313495041
 GameObject:
   m_ObjectHideFlags: 0
