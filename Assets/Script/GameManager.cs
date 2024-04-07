@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public static int views =0;
     public static int members=0;
     int tier=0;
-    int turn = 0;
+    public static int turn = 0;
     string headline;
 
     public static float moneyCoef = 17.2f;
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     int maxTurn=30;
 
-    List<int> drawnInd=new List<int>();
+    public List<int> drawnInd=new List<int>();
 
     // Start is called before the first frame update
     void Start()
@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
 
         UIM.WriteDays(30);
         UIM.WriteClippy("I'm not paying you to tell the truth. But. To. Spread. These. News");
-        money = 0;views = 0;members = 0;
+        money = 0;views = 0;members = 0; turn = 0;
 
     }
 
@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
     public void SelectedPost(int postNb)//updateGameState
     {
         Post current = returnPosts[postNb-1];
-        drawnInd.Add(current.Id);
+        drawnInd.Add(current.Id-1);
         headline = current.HeadLine;
         UpdateValues(current.Stats);//update numbers and turn
         UpdateDirection(current.Categories);
@@ -287,10 +287,11 @@ public class GameManager : MonoBehaviour
 
     Post DrawGivenCrazy(int category,int tierGoal)
     {
+        int failsafe = 0;
         List<int> ints = new List<int>();
         for(int i = 0; i < returnPosts.Count; i++)
         {
-            ints.Add(returnPosts[i].Id);
+            ints.Add(returnPosts[i].Id-1);
         }
         Post potentialPost=new();
         int ind = 0;
@@ -301,6 +302,15 @@ public class GameManager : MonoBehaviour
             {
                 ind = Random.Range(0, healthIndexes.Count);
                 potentialPost = postsList[healthIndexes[ind]];
+                Debug.Log(healthIndexes[ind]);
+                Debug.Log(drawnInd.Contains(healthIndexes[ind]).ToString());
+                failsafe++;
+                if(failsafe > 60)
+                {
+                    ind = Random.Range(0, celebrityIndexes.Count);
+                    potentialPost = postsList[celebrityIndexes[ind]];
+                    return potentialPost;
+                }
             } while (ints.Contains(healthIndexes[ind]) || drawnInd.Contains(healthIndexes[ind]) || Mathf.Abs(potentialPost.Stats.Tier - tierGoal) > 1);
 
 
@@ -314,7 +324,16 @@ public class GameManager : MonoBehaviour
                 {
                     ind = Random.Range(0, celebrityIndexes.Count);
                     potentialPost = postsList[celebrityIndexes[ind]];
-                } while (ints.Contains(celebrityIndexes[ind]) || drawnInd.Contains(celebrityIndexes[ind]) || !(Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1));
+
+                    failsafe++;
+                    if (failsafe > 60)
+                    {
+                        ind = Random.Range(0, environmentIndexes.Count);
+                        potentialPost = postsList[environmentIndexes[ind]];
+                        return potentialPost;
+                    }
+
+                } while (ints.Contains(celebrityIndexes[ind]) || drawnInd.Contains(celebrityIndexes[ind]) || Mathf.Abs(potentialPost.Stats.Tier - tierGoal) > 1);
 
             }
             else
@@ -324,7 +343,16 @@ public class GameManager : MonoBehaviour
                 {
                     ind = Random.Range(0, environmentIndexes.Count);
                     potentialPost = postsList[environmentIndexes[ind]];
-                } while (ints.Contains(environmentIndexes[ind]) || drawnInd.Contains(environmentIndexes[ind]) || !(Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1));
+
+                    failsafe++;
+                    if (failsafe > 60)
+                    {
+                        ind = Random.Range(0, healthIndexes.Count);
+                        potentialPost = postsList[healthIndexes[ind]];
+                        return potentialPost;
+                    }
+
+                } while (ints.Contains(environmentIndexes[ind]) || drawnInd.Contains(environmentIndexes[ind]) || Mathf.Abs(potentialPost.Stats.Tier - tierGoal) > 1);
             }
         }
         return potentialPost;
