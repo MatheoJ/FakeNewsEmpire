@@ -7,7 +7,10 @@ public class EndManager : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI MoneyText;
     public TMPro.TextMeshProUGUI MembersText;
-    //public GameManager gameManager;
+    
+
+    public GameObject endMenu;
+    public GameObject CreditMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +20,10 @@ public class EndManager : MonoBehaviour
 
 
         MoneyText.text = "" + money;
-        MembersText.text = "" + members;        
+        MembersText.text = "" + members;   
+        
+        endMenu.SetActive(true);
+        CreditMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -26,7 +32,15 @@ public class EndManager : MonoBehaviour
         // if right on screnn click restart
         if (Input.GetMouseButtonDown(0))
         {
-            SceneManager.LoadScene("StartScene");
+            if(CreditMenu.activeSelf)
+            {
+                SceneManager.LoadScene("StartScene");
+            }
+            else
+            {
+                CreditMenu.SetActive(true);
+                endMenu.SetActive(false);
+            }
         }        
     }
 }
