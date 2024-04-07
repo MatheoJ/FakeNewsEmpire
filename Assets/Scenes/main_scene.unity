@@ -293,7 +293,7 @@ MonoBehaviour:
   member_stat: {fileID: 380656155}
   assistant: {fileID: 296290394}
   deadline: {fileID: 930331878}
-  ban: {fileID: 0}
+  ban: {fileID: 2128985260}
   option1: {fileID: 1720129830}
   option2: {fileID: 1728589470}
   option3: {fileID: 1413069068}
@@ -541,8 +541,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1801,8 +1801,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1885,6 +1885,7 @@ MonoBehaviour:
   moneyCoef: 1
   viewsCoef: 1
   membersCoef: 1
+  banCoef: 0.1
   direction: {x: 0, y: 0, z: 0}
   healthIndexes: 
   celebrityIndexes: 
@@ -2172,8 +2173,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

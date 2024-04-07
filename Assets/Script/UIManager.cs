@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using static System.Net.Mime.MediaTypeNames;
 
 public class UIManager : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class UIManager : MonoBehaviour
     public Button option1;
     public Button option2;
     public Button option3;
+
+    string memberName = StartManager.playerName;
 
     //public int money = 0;
 
@@ -56,12 +59,14 @@ public class UIManager : MonoBehaviour
     {
         money_stat.GetComponentInChildren<TMP_Text>().text = "Money: " + stat.Money.ToString();
         viewer_stat.GetComponentInChildren<TMP_Text>().text = "Viewers : " + stat.Views.ToString();
-        member_stat.GetComponentInChildren<TMP_Text>().text = "Members : " + stat.Members.ToString();
+        member_stat.GetComponentInChildren<TMP_Text>().text = memberName+"ies : " + stat.Members.ToString();
+        ban.GetComponentInChildren<TMP_Text>().text = stat.BanChances.ToString()+"%";
+
     }
 
     public void WriteClippy(string text)
     {
-
+        assistant.GetComponentInChildren<TMP_Text>().text = text;
     }
 
     public void WritePosts(List<string> postText)
@@ -80,11 +85,22 @@ public class UIManager : MonoBehaviour
 
     public void WriteDays(int days)
     {
-
+        if (days < 10)
+        {
+            deadline.GetComponentInChildren<TMP_Text>().text = "0"+days.ToString();
+        }
+        else
+        {
+            deadline.GetComponentInChildren<TMP_Text>().text = days.ToString();
+        }
+        
     }
 
     public void WriteHeadline(string text)
     {
         news_headline.GetComponentInChildren<TMP_Text>().text = "BREAKING NEWS: "+text;
     }
+
+
+
 }

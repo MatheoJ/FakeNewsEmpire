@@ -1,0 +1,148 @@
+{
+    "BossLines": [
+        {
+            "Id": "1",
+            "Category": "Money",
+            "LineOrderInCategory": 1,
+            "Line": "Is that all you can do? Those dollars are what keeps you around!"
+        },
+        {
+            "Id": "2",
+            "Category": "Money",
+            "LineOrderInCategory": 2,
+            "Line": "Content is money, honey! Don't think about it, just post."
+        },
+        {
+            "Id": "3",
+            "Category": "Money",
+            "LineOrderInCategory": 3,
+            "Line": "Cold. Hard. Cash. That's how we do it. Just cause it is digital that money is real."
+        },
+        {
+            "Id": "4",
+            "Category": "Money",
+            "LineOrderInCategory": 4,
+            "Line": "Look at me. Look at you! Now back at me. Keep making money!"
+        },
+        {
+            "Id": "5",
+            "Category": "Money",
+            "LineOrderInCategory": 5,
+            "Line": "Information is gold. Lies, truth, I don't care, just keep making that dough!"
+        },
+        {
+            "Id": "6",
+            "Category": "Money",
+            "LineOrderInCategory": 6,
+            "Line": "Make it rain baby!!!"
+        },
+        {
+            "Id": "7",
+            "Category": "Views",
+            "LineOrderInCategory": 1,
+            "Line": "Impressive for a newbie I'm amaze you were born to be seen."
+        },
+        {
+            "Id": "8",
+            "Category": "Views",
+            "LineOrderInCategory": 2,
+            "Line": "The last employee got fired before getting this far, keep going."
+        },
+        {
+            "Id": "9",
+            "Category": "Views",
+            "LineOrderInCategory": 3,
+            "Line": "You're working toward getting a promotion that fast ???"
+        },
+        {
+            "Id": "10",
+            "Category": "Views",
+            "LineOrderInCategory": 4,
+            "Line": "People are loving your post keep working we're getting there !"
+        },
+        {
+            "Id": "11",
+            "Category": "Views",
+            "LineOrderInCategory": 5,
+            "Line": "You're probably the best employee we got this month, people are eating your posts !!!"
+        },
+        {
+            "Id": "12",
+            "Category": "Views",
+            "LineOrderInCategory": 6,
+            "Line": "WE'VE NEVER SEE SOMEONE GETTING THIS AMOUNT OF VIEWS THIS FAST I'M AMAZED !"
+        },
+        {
+            "Id": "13",
+            "Category": "Fans",
+            "LineOrderInCategory": 1,
+            "Line": "It's not a lie if people engage!"
+        },
+        {
+            "Id": "14",
+            "Category": "Fans",
+            "LineOrderInCategory": 2,
+            "Line": "Keep working people are loving you."
+        },
+        {
+            "Id": "15",
+            "Category": "Fans",
+            "LineOrderInCategory": 3,
+            "Line": "Every lie has some truth, trust me we got this people are engaging so much with you."
+        },
+        {
+            "Id": "16",
+            "Category": "Fans",
+            "LineOrderInCategory": 4,
+            "Line": "Keep working every post that you write gets you more dedicated fans!"
+        },
+        {
+            "Id": "17",
+            "Category": "Fans",
+            "LineOrderInCategory": 5,
+            "Line": "You're getting so much fans it'S getting out of control LET'S DO THIS!"
+        },
+        {
+            "Id": "18",
+            "Category": "Fans",
+            "LineOrderInCategory": 6,
+            "Line": "YOU HAVE SO MUCH FANS ! IT'S AMAZING KEEP POSTING !"
+        },
+        {
+            "Id": "19",
+            "Category": "Bans",
+            "LineOrderInCategory": 1,
+            "Line": "Don't feel bad about anything you post. This is an industry baby and you are part of it now!"
+        },
+        {
+            "Id": "20",
+            "Category": "Bans",
+            "LineOrderInCategory": 2,
+            "Line": "Ignore the haters. You are just doing your job."
+        },
+        {
+            "Id": "21",
+            "Category": "Bans",
+            "LineOrderInCategory": 3,
+            "Line": "Don't read those headlines, nothing but corporate trash!"
+        },
+        {
+            "Id": "22",
+            "Category": "Bans",
+            "LineOrderInCategory": 4,
+            "Line": "We can't be banned, don't worry about it."
+        },
+        {
+            "Id": "23",
+            "Category": "Bans",
+            "LineOrderInCategory": 5,
+            "Line": "Once you get high you attract vultures. Do. Not. Let. Them. Ban. You."
+        },
+        {
+            "Id": "24",
+            "Category": "Bans",
+            "LineOrderInCategory": 6,
+            "Line": "They can't silence us. We will prevail! WE'LL BE BACK STRONGER. "
+        }
+    ]
+}

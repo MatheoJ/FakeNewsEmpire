@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using TMPro.EditorUtilities;
 using UnityEditor.Build;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class GameManager : MonoBehaviour
     public UIManager UIM;
     public PostSelector postManager;
 
-    int banChance=0;
+    float banChance=0;
     int money=0;
     int views=0;
     int members=0;
@@ -18,11 +19,12 @@ public class GameManager : MonoBehaviour
     int turn = 0;
     string headline;
 
-    public int moneyCoef = 1;
-    public int viewsCoef = 1;
-    public int membersCoef = 1;
+    public float moneyCoef = 1;
+    public float viewsCoef = 1;
+    public float membersCoef = 1;
+    public float banCoef = 1;
 
-    string memberName;
+
 
     public Vector3 direction=Vector3.zero; //Health,Celebrity,Environment
 
@@ -47,20 +49,31 @@ public class GameManager : MonoBehaviour
         celebrityIndexes = postManager.GetCelebrityPosts();
         environmentIndexes = postManager.GetEnvironmentPosts();
 
-        returnPosts.Add(DrawGivenCrazy(1, 1));
-        returnPosts.Add(DrawGivenCrazy(2, 1));
-        returnPosts.Add(DrawGivenCrazy(3, 1));
+
+        Initialize();
+        
+    }
+
+    void Initialize()
+    {
+        returnPosts.Add(DrawGivenCrazy(1, 0));
+        returnPosts.Add(DrawGivenCrazy(2, 0));
+        returnPosts.Add(DrawGivenCrazy(3, 0));
         List<string> texts = new List<string>();
-        for(int i = 0; i < returnPosts.Count; i++) 
+        for (int i = 0; i < returnPosts.Count; i++)
         {
             texts.Add(returnPosts[i].Title);
         }
         UIM.WritePosts(texts);
 
-        UIM.WriteValues(new Stats() { Money = 0, Views = 0 ,BanChances=0,Members=0});
+        UIM.WriteValues(new Stats() { Money = 0, Views = 0, BanChances = 0, Members = 0 });
 
         UIM.WriteHeadline("Nothing Yet");
+
+        UIM.WriteDays(30);
+
     }
+
 
     // Update is called once per frame
     void Update()
@@ -95,18 +108,23 @@ public class GameManager : MonoBehaviour
     void UpdateValues(Stats stat)
     {
         //banChance = (banChance * (turn - 1) + stat.BanChances) * turn;
-        banChance += stat.BanChances;
-        money += stat.Money*moneyCoef;
+        banChance += stat.BanChances*banCoef;
+        if(banChance < 0)
+        {
+            banChance = 0;
+        }
+        else if (banChance > 100) { banChance = 100; }
+        money += stat.Money;
         if(money < 0)
         {
             money = 0;
         }
-        views += stat.Views*viewsCoef;
+        views += stat.Views;
         if(views < 0)
         {
             views = 0;
         }
-        members += stat.Members*membersCoef;
+        members += stat.Members;
         if (members < 0)
         {
             members = 0;
@@ -114,7 +132,8 @@ public class GameManager : MonoBehaviour
         tier = stat.Tier;
         turn += 1;
         //UI update
-        UIM.WriteValues(new Stats() { Members = members, Tier = tier,Money=money,Views=views,BanChances=banChance });    
+        UIM.WriteValues(new Stats() { Members =(int) (members * membersCoef), Tier = tier,Money=(int) (money * moneyCoef), Views=(int) (views * viewsCoef), BanChances=(int) banChance }); 
+        UIM.WriteDays(30-turn);
     }
 
     void UpdateDirection(List<string> categories)
@@ -146,7 +165,7 @@ public class GameManager : MonoBehaviour
             banChance = 0;
             return false;
         }
-
+        if(Random.Range(0, 100) < banChance) { Debug.Log("banned!"); }
         return false;//Random.Range(0, 100)<banChance;
     }
 
@@ -162,10 +181,14 @@ public class GameManager : MonoBehaviour
         headlines.Add(headline);
     }
 
+    Vector3 clippyLines = Vector3.zero;
     void UpdateClippy()
     {
         //draw clippy interaction depending on ban rate
         //update UI UIM.UpdateClippy(string)
+
+        //if(money)
+
     }
 
     void NextPosts()
@@ -216,6 +239,11 @@ public class GameManager : MonoBehaviour
 
     Post DrawGivenCrazy(int category,int tierGoal)
     {
+        List<int> ints = new List<int>();
+        for(int i = 0; i < returnPosts.Count; i++)
+        {
+            ints.Add(returnPosts[i].Id);
+        }
         Post potentialPost=new();
         int ind = 0;
         if (category == 1)
@@ -225,7 +253,7 @@ public class GameManager : MonoBehaviour
             {
                 ind = Random.Range(0, healthIndexes.Count);
                 potentialPost = postsList[healthIndexes[ind]];
-            } while (drawnInd.Contains(healthIndexes[ind]) || Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1);
+            } while (ints.Contains(healthIndexes[ind]) || drawnInd.Contains(healthIndexes[ind]) || !(Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1));
 
 
         }
@@ -238,7 +266,7 @@ public class GameManager : MonoBehaviour
                 {
                     ind = Random.Range(0, celebrityIndexes.Count);
                     potentialPost = postsList[celebrityIndexes[ind]];
-                } while (drawnInd.Contains(celebrityIndexes[ind]) || Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1);
+                } while (ints.Contains(celebrityIndexes[ind]) || drawnInd.Contains(celebrityIndexes[ind]) || !(Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1));
 
             }
             else
@@ -248,7 +276,7 @@ public class GameManager : MonoBehaviour
                 {
                     ind = Random.Range(0, environmentIndexes.Count);
                     potentialPost = postsList[environmentIndexes[ind]];
-                } while (drawnInd.Contains(environmentIndexes[ind]) || Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1);
+                } while (ints.Contains(environmentIndexes[ind]) || drawnInd.Contains(environmentIndexes[ind]) || !(Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1));
             }
         }
         return potentialPost;
