@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     public GameObject news_headline;
     public GameObject money_stat;
     public GameObject viewer_stat;
-    public GameObject memeber_stat;
+    public GameObject member_stat;
     public GameObject assistant;
     public GameObject deadline;
 
@@ -24,13 +24,13 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
         //Register Button Events
-        option1.onClick.AddListener(delegate {ButtonPressed(option1); });
-        option2.onClick.AddListener(delegate {ButtonPressed(option2); });
-        option3.onClick.AddListener(delegate {ButtonPressed(option3); });
+        option1.onClick.AddListener(delegate {Button1Pressed(); });
+        option2.onClick.AddListener(delegate {Button2Pressed(); });
+        option3.onClick.AddListener(delegate {Button3Pressed(); });
         //news_headline = GameObject.Find("");//.GetComponentInChildren<TMP_Text>().text;
-        Debug.Log("LOG: " + news_headline.GetComponent<TMP_Text>().text);
+        //Debug.Log("LOG: " + news_headline.GetComponent<TMP_Text>().text);
         //Debug.Log("hi " + news_headline);
         //DumpToConsole(news_headline);
         
@@ -39,9 +39,10 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
 
-    void ButtonPressed(Button option)
+    /*void ButtonPressed(Button option)
     {
         string text_to_display = option.GetComponentInChildren<TMP_Text>().text;
         switch(text_to_display){
@@ -63,25 +64,55 @@ public class UIManager : MonoBehaviour
                 WriteValues();
                 break;
         }
+    }*/
+
+    public void Button1Pressed()
+    {
+        gameManager.SelectedPost(1);
+    }
+    public void Button2Pressed()
+    {
+        gameManager.SelectedPost(2);
+    }
+    public void Button3Pressed()
+    {
+        gameManager.SelectedPost(3);
     }
 
-    void WriteValues()//int money, int banRate, int views, int members)
+
+    public void WriteValues(Stats stat)
     {
-        money_stat.GetComponentInChildren<TMP_Text>().text = "Money: " + money.ToString();
+        money_stat.GetComponentInChildren<TMP_Text>().text = "Money: " + stat.Money.ToString();
+        viewer_stat.GetComponentInChildren<TMP_Text>().text = "Viewers : " + stat.Views.ToString();
+        member_stat.GetComponentInChildren<TMP_Text>().text = "Members : " + stat.Members.ToString();
     }
 
-    void WriteClippy(string text)
+    public void WriteClippy(string text)
     {
 
     }
 
-    void WritePosts(string[] postText)
+    public void WritePosts(List<string> postText)
+    {
+        if (postText.Count == 3)
+        {
+            option1.GetComponentInChildren<TMP_Text>().text = postText[0];
+            option2.GetComponentInChildren<TMP_Text>().text = postText[1];
+            option3.GetComponentInChildren<TMP_Text>().text = postText[2];
+        }
+        else
+        {
+            Debug.Log("erreur nb de posts de UIM");
+        }
+    }
+
+    public void WriteDays(int days)
     {
 
     }
 
-    void WriteDays(int days)
+    public void WriteHeadline(string text)
     {
-
+        news_headline.GetComponentInChildren<TMP_Text>().text = "BREAKING NEWS: "+text;
     }
 }
