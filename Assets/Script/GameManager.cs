@@ -47,20 +47,31 @@ public class GameManager : MonoBehaviour
         celebrityIndexes = postManager.GetCelebrityPosts();
         environmentIndexes = postManager.GetEnvironmentPosts();
 
+
+        Initialize();
+        
+    }
+
+    void Initialize()
+    {
         returnPosts.Add(DrawGivenCrazy(1, 1));
         returnPosts.Add(DrawGivenCrazy(2, 1));
         returnPosts.Add(DrawGivenCrazy(3, 1));
         List<string> texts = new List<string>();
-        for(int i = 0; i < returnPosts.Count; i++) 
+        for (int i = 0; i < returnPosts.Count; i++)
         {
             texts.Add(returnPosts[i].Title);
         }
         UIM.WritePosts(texts);
 
-        UIM.WriteValues(new Stats() { Money = 0, Views = 0 ,BanChances=0,Members=0});
+        UIM.WriteValues(new Stats() { Money = 0, Views = 0, BanChances = 0, Members = 0 });
 
         UIM.WriteHeadline("Nothing Yet");
+
+        UIM.WriteDays(30);
+
     }
+
 
     // Update is called once per frame
     void Update()
@@ -96,17 +107,22 @@ public class GameManager : MonoBehaviour
     {
         //banChance = (banChance * (turn - 1) + stat.BanChances) * turn;
         banChance += stat.BanChances;
-        money += stat.Money*moneyCoef;
+        if(banChance < 0)
+        {
+            banChance = 0;
+        }
+        else if (banChance > 100) { banChance = 100; }
+        money += stat.Money;
         if(money < 0)
         {
             money = 0;
         }
-        views += stat.Views*viewsCoef;
+        views += stat.Views;
         if(views < 0)
         {
             views = 0;
         }
-        members += stat.Members*membersCoef;
+        members += stat.Members;
         if (members < 0)
         {
             members = 0;
@@ -114,7 +130,8 @@ public class GameManager : MonoBehaviour
         tier = stat.Tier;
         turn += 1;
         //UI update
-        UIM.WriteValues(new Stats() { Members = members, Tier = tier,Money=money,Views=views,BanChances=banChance });    
+        UIM.WriteValues(new Stats() { Members = members * membersCoef, Tier = tier,Money=money * moneyCoef, Views=views * viewsCoef, BanChances=banChance }); 
+        UIM.WriteDays(30-turn);
     }
 
     void UpdateDirection(List<string> categories)
@@ -146,7 +163,7 @@ public class GameManager : MonoBehaviour
             banChance = 0;
             return false;
         }
-
+        if(Random.Range(0, 100) < banChance) { Debug.Log("banned!"); }
         return false;//Random.Range(0, 100)<banChance;
     }
 
@@ -162,10 +179,14 @@ public class GameManager : MonoBehaviour
         headlines.Add(headline);
     }
 
+    Vector3 clippyLines = Vector3.zero;
     void UpdateClippy()
     {
         //draw clippy interaction depending on ban rate
         //update UI UIM.UpdateClippy(string)
+
+        //if(money)
+
     }
 
     void NextPosts()
