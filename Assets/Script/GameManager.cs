@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using TMPro.EditorUtilities;
 using UnityEditor.Build;
 using UnityEngine;
@@ -237,6 +238,11 @@ public class GameManager : MonoBehaviour
 
     Post DrawGivenCrazy(int category,int tierGoal)
     {
+        List<int> ints = new List<int>();
+        for(int i = 0; i < returnPosts.Count; i++)
+        {
+            ints.Add(returnPosts[i].Id);
+        }
         Post potentialPost=new();
         int ind = 0;
         if (category == 1)
@@ -246,7 +252,7 @@ public class GameManager : MonoBehaviour
             {
                 ind = Random.Range(0, healthIndexes.Count);
                 potentialPost = postsList[healthIndexes[ind]];
-            } while (drawnInd.Contains(healthIndexes[ind]) || Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1);
+            } while (ints.Contains(healthIndexes[ind]) || drawnInd.Contains(healthIndexes[ind]) || Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1);
 
 
         }
@@ -259,7 +265,7 @@ public class GameManager : MonoBehaviour
                 {
                     ind = Random.Range(0, celebrityIndexes.Count);
                     potentialPost = postsList[celebrityIndexes[ind]];
-                } while (drawnInd.Contains(celebrityIndexes[ind]) || Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1);
+                } while (ints.Contains(celebrityIndexes[ind]) || drawnInd.Contains(celebrityIndexes[ind]) || Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1);
 
             }
             else
@@ -269,7 +275,7 @@ public class GameManager : MonoBehaviour
                 {
                     ind = Random.Range(0, environmentIndexes.Count);
                     potentialPost = postsList[environmentIndexes[ind]];
-                } while (drawnInd.Contains(environmentIndexes[ind]) || Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1);
+                } while (ints.Contains(environmentIndexes[ind]) || drawnInd.Contains(environmentIndexes[ind]) || Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1);
             }
         }
         return potentialPost;
