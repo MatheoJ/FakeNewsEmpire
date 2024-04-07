@@ -5,16 +5,18 @@ using System.Linq;
 using TMPro.EditorUtilities;
 using UnityEditor.Build;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public UIManager UIM;
     public PostSelector postManager;
+    public BossLinesSelector bossLinesSelector;
 
-    float banChance=0;
-    int money=0;
-    int views=0;
-    int members=0;
+    public float banChance=0;
+    public static int money=0;
+    public static int views =0;
+    public static int members=0;
     int tier=0;
     int turn = 0;
     string headline;
@@ -36,6 +38,8 @@ public class GameManager : MonoBehaviour
     List<string> headlines=new();
     public List<Post> returnPosts = new List<Post>();
 
+    public List<BossLine> bossLines=new();
+
     [SerializeField]
     int maxTurn=30;
 
@@ -48,6 +52,7 @@ public class GameManager : MonoBehaviour
         healthIndexes = postManager.GetHealthPosts();
         celebrityIndexes = postManager.GetCelebrityPosts();
         environmentIndexes = postManager.GetEnvironmentPosts();
+        bossLines = bossLinesSelector.GetBossLinesForTheGame();
 
 
         Initialize();
@@ -60,17 +65,21 @@ public class GameManager : MonoBehaviour
         returnPosts.Add(DrawGivenCrazy(2, 0));
         returnPosts.Add(DrawGivenCrazy(3, 0));
         List<string> texts = new List<string>();
+        List<int> categories = new List<int>();
         for (int i = 0; i < returnPosts.Count; i++)
         {
             texts.Add(returnPosts[i].Title);
+            categories.Add(i);
         }
-        UIM.WritePosts(texts);
+        UIM.WritePosts(texts, categories);
 
         UIM.WriteValues(new Stats() { Money = 0, Views = 0, BanChances = 0, Members = 0 });
 
         UIM.WriteHeadline("Nothing Yet");
 
         UIM.WriteDays(30);
+        UIM.WriteClippy("I'm not paying you to tell the truth. But. To. Spread. These. News");
+        money = 0;views = 0;members = 0;
 
     }
 
@@ -92,6 +101,7 @@ public class GameManager : MonoBehaviour
         if (BanTest())
         {
             //UIM.endscreen("banned")
+            SceneManager.LoadScene("GameOverScene");
             return;
         }
         if (turn >= maxTurn)
@@ -165,8 +175,9 @@ public class GameManager : MonoBehaviour
             banChance = 0;
             return false;
         }
-        if(Random.Range(0, 100) < banChance) { Debug.Log("banned!"); }
-        return false;//Random.Range(0, 100)<banChance;
+        /*if(Random.Range(0, 100) < banChance) { Debug.Log("banned!"); }
+        return false;*/
+        return Random.Range(0, 100)<banChance;
     }
 
     void UpdateHeadline()
@@ -181,13 +192,45 @@ public class GameManager : MonoBehaviour
         headlines.Add(headline);
     }
 
-    Vector3 clippyLines = Vector3.zero;
+    //Vector3 clippyLines = Vector3.zero;
     void UpdateClippy()
     {
         //draw clippy interaction depending on ban rate
         //update UI UIM.UpdateClippy(string)
 
         //if(money)
+        //bossLines;
+        foreach(BossLine line in bossLines) 
+        {
+
+            if (line.Category == "Money" && line.LineOrderInCategory * 200 < money)
+            {
+                UIM.WriteClippy(line.Line);
+
+                bossLines.Remove(line);
+                return;
+            }
+            else if (line.Category == "Views" && line.LineOrderInCategory * 200 < views)
+            {
+                UIM.WriteClippy(line.Line);
+                bossLines.Remove(line);
+                return;
+            }
+            else if (line.Category == "Fans" && line.LineOrderInCategory * 200 < members)
+            {
+                UIM.WriteClippy(line.Line);
+                bossLines.Remove(line);
+                return;
+            }
+            else if (line.Category == "Bans" && line.LineOrderInCategory * 10 < banChance)
+            {
+                UIM.WriteClippy(line.Line);
+                bossLines.Remove(line);
+                return;
+            }
+          
+        }
+
 
     }
 
@@ -228,11 +271,15 @@ public class GameManager : MonoBehaviour
 
         //draw associated icons depending on direction
         List<string> titles = new List<string>();
+        List<int> categories = new List<int>();
         for (int i = 0; i < returnPosts.Count; i++)
         {
             titles.Add(returnPosts[i].Title);
+            if (returnPosts[i].Categories[0] == "Health") { categories.Add(0); }
+            else if (returnPosts[i].Categories[0] == "Celebrity") { categories.Add(1); }
+            else if (returnPosts[i].Categories[0] == "Environment") { categories.Add(2); }
         }
-        UIM.WritePosts(titles);
+        UIM.WritePosts(titles,categories);
 
 
     }

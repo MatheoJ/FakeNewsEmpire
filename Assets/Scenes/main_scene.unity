@@ -291,13 +291,19 @@ MonoBehaviour:
   money_stat: {fileID: 1654537902}
   viewer_stat: {fileID: 1218461648}
   member_stat: {fileID: 380656155}
-  assistant: {fileID: 296290394}
+  assistant: {fileID: 1995931791}
   deadline: {fileID: 930331878}
   ban: {fileID: 2128985260}
   option1: {fileID: 1720129830}
   option2: {fileID: 1728589470}
   option3: {fileID: 1413069068}
+<<<<<<< HEAD
   elapsed: 0
+=======
+  healthIcon: {fileID: 21300000, guid: e8e4eb505de31b949a8b0570c2edf4b4, type: 3}
+  celebrityIcon: {fileID: 21300000, guid: 79bf7137f4eb16248a1e0612c86fce95, type: 3}
+  environmentIcon: {fileID: 21300000, guid: 76d5d7e114b187646a5f65f4ed086443, type: 3}
+>>>>>>> 618d32a15769ae31033a4c86bf0f878e083f229c
 --- !u!4 &291015690
 Transform:
   m_ObjectHideFlags: 0
@@ -1184,11 +1190,11 @@ RectTransform:
   - {fileID: 1675502919}
   - {fileID: 1001128320}
   - {fileID: 2128985261}
-  - {fileID: 930331879}
   - {fileID: 1720129829}
   - {fileID: 1728589469}
   - {fileID: 1413069067}
   - {fileID: 1716453384}
+  - {fileID: 930331879}
   m_Father: {fileID: 1136721963}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1293,9 +1299,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 930331878}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.7999999, y: 0.7999999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1844259389}
@@ -1303,7 +1309,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -40}
+  m_AnchoredPosition: {x: 0, y: -40.000015}
   m_SizeDelta: {x: 149.15192, y: 149.15186}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &930331880
@@ -1883,16 +1889,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIM: {fileID: 291015689}
   postManager: {fileID: 1612636066}
-  moneyCoef: 1
-  viewsCoef: 1
-  membersCoef: 1
-  banCoef: 0.1
+  bossLinesSelector: {fileID: 1612636068}
+  banChance: 0
+  money: 0
+  views: 0
+  members: 0
+  moneyCoef: 3.134
+  viewsCoef: 36.0123
+  membersCoef: 1.9876
+  banCoef: 0.04
   direction: {x: 0, y: 0, z: 0}
   healthIndexes: 
   celebrityIndexes: 
   environmentIndexes: 
   postsList: []
   returnPosts: []
+  bossLines: []
   maxTurn: 30
 --- !u!4 &1345482478
 Transform:
@@ -2052,8 +2064,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1612636067}
   - component: {fileID: 1612636066}
+  - component: {fileID: 1612636068}
   m_Layer: 0
-  m_Name: postManager
+  m_Name: DataManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2090,6 +2103,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1612636068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612636065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f09b093d1b8341459ef8a2f021a7285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossLines: []
 --- !u!1 &1654537902
 GameObject:
   m_ObjectHideFlags: 0
@@ -2671,7 +2697,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 730, y: 286}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1745467610
@@ -2877,8 +2903,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -15, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 10, y: 0}
+  m_SizeDelta: {x: 150, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1995931793
 MonoBehaviour:
@@ -2927,10 +2953,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 50
+  m_fontSizeBase: 20
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
