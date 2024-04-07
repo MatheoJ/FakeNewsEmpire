@@ -36,10 +36,10 @@ public class BossLinesSelector : MonoBehaviour
 
         // Example usage
         List<BossLine> linesForTheGame = GetBossLinesForTheGame();
-        foreach (BossLine line in linesForTheGame)
+        /*foreach (BossLine line in linesForTheGame)
         {
             Debug.Log("Line ID: " + line.Id + ", Category: " + line.Category + ", Line Order: " + line.LineOrderInCategory + ", Line: " + line.Line);
-        }
+        }*/
 
     }
 

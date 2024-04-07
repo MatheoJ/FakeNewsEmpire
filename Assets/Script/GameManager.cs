@@ -5,15 +5,17 @@ using System.Linq;
 using TMPro.EditorUtilities;
 using UnityEditor.Build;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public UIManager UIM;
     public PostSelector postManager;
+    public BossLinesSelector bossLinesSelector;
 
     float banChance=0;
     int money=0;
-    int views=0;
+    public int views=0;
     int members=0;
     int tier=0;
     int turn = 0;
@@ -36,6 +38,8 @@ public class GameManager : MonoBehaviour
     List<string> headlines=new();
     public List<Post> returnPosts = new List<Post>();
 
+    public List<BossLine> bossLines=new();
+
     [SerializeField]
     int maxTurn=30;
 
@@ -48,6 +52,7 @@ public class GameManager : MonoBehaviour
         healthIndexes = postManager.GetHealthPosts();
         celebrityIndexes = postManager.GetCelebrityPosts();
         environmentIndexes = postManager.GetEnvironmentPosts();
+        bossLines = bossLinesSelector.GetBossLinesForTheGame();
 
 
         Initialize();
@@ -71,6 +76,7 @@ public class GameManager : MonoBehaviour
         UIM.WriteHeadline("Nothing Yet");
 
         UIM.WriteDays(30);
+        UIM.WriteClippy("I'm not paying you to tell the truth. But. To. Spread. These. News");
 
     }
 
@@ -92,6 +98,7 @@ public class GameManager : MonoBehaviour
         if (BanTest())
         {
             //UIM.endscreen("banned")
+            SceneManager.LoadScene("GameOverScene");
             return;
         }
         if (turn >= maxTurn)
@@ -181,13 +188,50 @@ public class GameManager : MonoBehaviour
         headlines.Add(headline);
     }
 
-    Vector3 clippyLines = Vector3.zero;
+    //Vector3 clippyLines = Vector3.zero;
     void UpdateClippy()
     {
         //draw clippy interaction depending on ban rate
         //update UI UIM.UpdateClippy(string)
 
         //if(money)
+        //bossLines;
+        bool v = true;
+        foreach(BossLine line in bossLines) 
+        {
+            if (v)
+            {
+                if (line.Category == "Money" && line.LineOrderInCategory * 200 < money)
+                {
+                    UIM.WriteClippy(line.Line);
+                    v = false;
+                    bossLines.Remove(line);
+                    return;
+                }
+                else if (line.Category == "Views" && line.LineOrderInCategory * 200 < views)
+                {
+                    UIM.WriteClippy(line.Line);
+                    v = false;
+                    bossLines.Remove(line);
+                    return;
+                }
+                else if (line.Category == "Fans" && line.LineOrderInCategory * 200 < members)
+                {
+                    UIM.WriteClippy(line.Line);
+                    v = false;
+                    bossLines.Remove(line);
+                    return;
+                }
+                else if (line.Category == "Bans" && line.LineOrderInCategory * 10 < banChance)
+                {
+                    UIM.WriteClippy(line.Line);
+                    v = false;
+                    bossLines.Remove(line);
+                    return;
+                }
+            }
+        }
+
 
     }
 

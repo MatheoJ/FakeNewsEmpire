@@ -1882,6 +1882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIM: {fileID: 291015689}
   postManager: {fileID: 1612636066}
+  bossLinesSelector: {fileID: 1612636068}
   moneyCoef: 1
   viewsCoef: 1
   membersCoef: 1
@@ -1892,6 +1893,7 @@ MonoBehaviour:
   environmentIndexes: 
   postsList: []
   returnPosts: []
+  bossLines: []
   maxTurn: 30
 --- !u!4 &1345482478
 Transform:
@@ -2051,8 +2053,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1612636067}
   - component: {fileID: 1612636066}
+  - component: {fileID: 1612636068}
   m_Layer: 0
-  m_Name: postManager
+  m_Name: DataManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2089,6 +2092,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1612636068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612636065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f09b093d1b8341459ef8a2f021a7285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossLines: []
 --- !u!1 &1654537902
 GameObject:
   m_ObjectHideFlags: 0
