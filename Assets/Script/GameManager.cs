@@ -20,8 +20,8 @@ public class GameManager : MonoBehaviour
     string headline;
 
     public float moneyCoef = 1;
-    public int viewsCoef = 1;
-    public int membersCoef = 1;
+    public float viewsCoef = 1;
+    public float membersCoef = 1;
     public float banCoef = 1;
 
 
@@ -132,7 +132,7 @@ public class GameManager : MonoBehaviour
         tier = stat.Tier;
         turn += 1;
         //UI update
-        UIM.WriteValues(new Stats() { Members = members * membersCoef, Tier = tier,Money=(int) (money * moneyCoef), Views=views * viewsCoef, BanChances=(int) banChance }); 
+        UIM.WriteValues(new Stats() { Members =(int) (members * membersCoef), Tier = tier,Money=(int) (money * moneyCoef), Views=(int) (views * viewsCoef), BanChances=(int) banChance }); 
         UIM.WriteDays(30-turn);
     }
 
