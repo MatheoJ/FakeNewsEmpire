@@ -10,7 +10,6 @@ public class PauseManager : MonoBehaviour
     public Button resumeButton;
     public Button quitButton;
     public TMPro.TextMeshProUGUI viewCounter;
-    public GameManager gameManager;
 
 
     // Start is called before the first frame update
@@ -35,10 +34,8 @@ public class PauseManager : MonoBehaviour
             {
                 pauseMenu.SetActive(true);
                 int views = 0;
-                if (gameManager != null)
-                {
-                    views = gameManager.views;
-                }
+                views = GameManager.views;
+                
                 viewCounter.text = ""+views;
             }
         }
