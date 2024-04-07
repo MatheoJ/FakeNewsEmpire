@@ -17,7 +17,6 @@ public class PostSelector : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        //Debug.Log("début des datas");
         // Read the JSON data from the file
         string json = System.IO.File.ReadAllText(Application.dataPath + postsJsonLocation);
 
@@ -62,14 +61,6 @@ public class PostSelector : MonoBehaviour
 
     public List<int> GetCelebrityPosts() { return celebrityPostIndex; }
 
-
-    /*public void getLists(List<Post> posts, List<int> healthPosts, List<int> environmentPosts, List<int> celebrityPosts)
-    {
-        posts = this.posts;
-        healthPosts = healthPostIndex;
-        environmentPosts = environmentPostIndex;
-        celebrityPosts= celebrityPostIndex;
-    }*/
 }
 
 

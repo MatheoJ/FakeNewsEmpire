@@ -33,16 +33,15 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     int maxTurn=30;
 
+    List<int> drawnInd=new List<int>();
+
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("récupération des posts");
-        //postManager.getLists(postsList, healthIndexes, environmentIndexes, celebrityIndexes);
         postsList = postManager.GetPosts();
         healthIndexes = postManager.GetHealthPosts();
         celebrityIndexes = postManager.GetCelebrityPosts();
         environmentIndexes = postManager.GetEnvironmentPosts();
-        Debug.Log("affichage des premiers posts");
 
         returnPosts.Add(DrawGivenCrazy(1, 1));
         returnPosts.Add(DrawGivenCrazy(2, 1));
@@ -52,7 +51,6 @@ public class GameManager : MonoBehaviour
         {
             texts.Add(returnPosts[i].Title);
         }
-        //Debug.Log(texts[2]);
         UIM.WritePosts(texts);
 
         UIM.WriteValues(new Stats() { Money = 0, Views = 0 ,BanChances=0,Members=0});
@@ -68,8 +66,8 @@ public class GameManager : MonoBehaviour
 
     public void SelectedPost(int postNb)//updateGameState
     {
-        Debug.Log("post nb "+postNb.ToString()+" selected");
         Post current = returnPosts[postNb-1];
+        drawnInd.Add(current.Id);
         headline = current.HeadLine;
         UpdateValues(current.Stats);//update numbers and turn
         UpdateDirection(current.Categories);
@@ -152,10 +150,7 @@ public class GameManager : MonoBehaviour
     {
         //write headline interaction depending on direction and ban rate
         if (headlines.Count>1 && Random.Range(0, 3)== 2){
-            //write headline as headlines[Random.Range(1, headlines.Count)]
             int ind = Random.Range(1, headlines.Count);
-            Debug.Log(ind.ToString());
-            Debug.Log(headlines.Count.ToString());
             UIM.WriteHeadline(headlines[ind]);
         }
         if (headlines.Count > 3) { headlines.RemoveAt(0); }
@@ -171,7 +166,6 @@ public class GameManager : MonoBehaviour
 
     void NextPosts()
     {
-        Debug.Log("updating posts");
         //draw 3 new posts depending on stats of the game
         //prepare probabilities
         List<float> probs = new List<float>();
@@ -191,25 +185,21 @@ public class GameManager : MonoBehaviour
             if (prob < probs[0])
             {
                 //draw health post
-                //returnPosts.Add(postsList[healthIndexes[Random.Range(0,healthIndexes.Count)]]);
                 returnPosts.Add(DrawGivenCrazy(1, tier));
             }
             else if (prob < probs[0]+probs[1])
             {
                 //draw celeb post
-                //returnPosts.Add(postsList[celebrityIndexes[Random.Range(0, healthIndexes.Count)]]);
                 returnPosts.Add(DrawGivenCrazy(2, tier));
             }
             else
             {
                 //draw env post
-                //returnPosts.Add(postsList[environmentIndexes[Random.Range(0, healthIndexes.Count)]]);
                 returnPosts.Add(DrawGivenCrazy(3, tier));
             }
         }
 
         //draw associated icons depending on direction
-        //update UI UIM.UpdatePosts(string[3])
         List<string> titles = new List<string>();
         for (int i = 0; i < returnPosts.Count; i++)
         {
@@ -223,38 +213,42 @@ public class GameManager : MonoBehaviour
     Post DrawGivenCrazy(int category,int tierGoal)
     {
         Post potentialPost=new();
+        int ind = 0;
         if (category == 1)
         {
             //draw health post
             do
             {
-                potentialPost = postsList[healthIndexes[Random.Range(0, healthIndexes.Count)]];
-            } while (Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1);
+                ind = Random.Range(0, healthIndexes.Count);
+                potentialPost = postsList[healthIndexes[ind]];
+            } while (drawnInd.Contains(healthIndexes[ind]) || Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1);
+
+
         }
         else
         {
             if (category == 2)
             {
                 //draw celeb post
-                //returnPosts.Add(postsList[celebrityIndexes[Random.Range(0, healthIndexes.Count)]]);
-                potentialPost = postsList[celebrityIndexes[Random.Range(0, celebrityIndexes.Count)]];
-                while (Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1)
+                do
                 {
-                    potentialPost = postsList[celebrityIndexes[Random.Range(0, celebrityIndexes.Count)]];
-                }
+                    ind = Random.Range(0, celebrityIndexes.Count);
+                    potentialPost = postsList[celebrityIndexes[ind]];
+                } while (drawnInd.Contains(celebrityIndexes[ind]) || Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1);
+
             }
             else
             {
                 //draw env post
-                //returnPosts.Add(postsList[environmentIndexes[Random.Range(0, healthIndexes.Count)]]);
-                potentialPost = postsList[environmentIndexes[Random.Range(0, environmentIndexes.Count)]];
-                while (Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1)
+                do
                 {
-                    potentialPost = postsList[environmentIndexes[Random.Range(0, environmentIndexes.Count)]];
-                }
+                    ind = Random.Range(0, environmentIndexes.Count);
+                    potentialPost = postsList[environmentIndexes[ind]];
+                } while (drawnInd.Contains(environmentIndexes[ind]) || Mathf.Abs(potentialPost.Stats.Tier - tierGoal) <= 1);
             }
         }
         return potentialPost;
     }
+
 
 }

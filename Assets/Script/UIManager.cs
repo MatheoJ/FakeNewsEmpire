@@ -19,20 +19,15 @@ public class UIManager : MonoBehaviour
     public Button option2;
     public Button option3;
 
-    public int money = 0;
+    //public int money = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
         //Register Button Events
         option1.onClick.AddListener(delegate {Button1Pressed(); });
         option2.onClick.AddListener(delegate {Button2Pressed(); });
         option3.onClick.AddListener(delegate {Button3Pressed(); });
-        //news_headline = GameObject.Find("");//.GetComponentInChildren<TMP_Text>().text;
-        //Debug.Log("LOG: " + news_headline.GetComponent<TMP_Text>().text);
-        //Debug.Log("hi " + news_headline);
-        //DumpToConsole(news_headline);
         
     }
 
@@ -41,30 +36,6 @@ public class UIManager : MonoBehaviour
     {
 
     }
-
-    /*void ButtonPressed(Button option)
-    {
-        string text_to_display = option.GetComponentInChildren<TMP_Text>().text;
-        switch(text_to_display){
-            case "Option 1":
-                Debug.Log("Clicked: " + text_to_display);
-                money = money + 200;
-                WriteValues();
-                break;
-
-            case "Option 2":
-                Debug.Log("Clicked: " + text_to_display);
-                money = money - 200;
-                WriteValues();
-                break;
-
-            case "Option 3":
-                Debug.Log("Clicked: " + text_to_display);
-                money = money * 5;
-                WriteValues();
-                break;
-        }
-    }*/
 
     public void Button1Pressed()
     {
